@@ -29,3 +29,9 @@
 - [Building knowledge](Building-knowledge)
 - [Ship orders](Ship-orders)
 - [Encyclopedia](Encyclopedia)
+
+**Items & Special Objects**
+- [Reconstruction kits](Reconstruction-kits)
+- [Maps and charts](Maps-and-charts)
+- [Deployable beacons](Deployable-beacons)
+- [Special items](Special-items)

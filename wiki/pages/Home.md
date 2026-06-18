@@ -36,4 +36,11 @@ A player-facing wiki for **Avorion**, focused on game mechanics derived directly
 - **[Ship orders](Ship-orders)** – the fleet commands you give captained ships
 - **[Encyclopedia](Encyclopedia)** – the game's built-in help book and its table of contents
 
+## Items & Special Objects
+
+- **[Reconstruction kits](Reconstruction-kits)** – reviving a destroyed ship from its wreckage, and the 50% repair penalty
+- **[Maps and charts](Maps-and-charts)** – chips that fill in the Galaxy Map: faction territory, gate updates, AI tracking
+- **[Deployable beacons](Deployable-beacons)** – message beacons, sector renaming, and marker buoys
+- **[Special items](Special-items)** – the Recall Device home-jump, the Energy Suppressor, and bound mission chips
+
 *More sections (ships, factions, world generation, …) to follow.*
