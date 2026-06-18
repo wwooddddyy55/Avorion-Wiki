@@ -1,0 +1,65 @@
+# Avorion Wiki
+
+Player-facing wiki pages for Avorion, written in **GitHub Flavored Markdown** for use as a **GitHub wiki**.
+Pages are derived from the game's own scripts so the numbers stay accurate.
+
+## Layout
+
+```
+wiki/
+├── pages/        GitHub-wiki Markdown pages (.md)
+├── extraction/   Line-accurate technical facts extracted from the game code
+└── tools/        Python generators that build the data-heavy pages from source
+```
+
+### pages/
+
+| File | Page | Covers |
+|---|---|---|
+| `Home.md` | Home | Wiki landing page / index |
+| `_Sidebar.md` | (sidebar) | Navigation shown on every wiki page |
+| `Trading-and-Prices.md` | Trading and Prices | Price formula, supply/demand, relations, tax, stock, NPC traders |
+| `Goods.md` | Goods | Full commodity catalog, raw resources, contraband |
+| `Production.md` | Production | Every factory recipe and build/upgrade cost formulas |
+| `Refining.md` | Refining | Materials, ore/scrap → material mappings, the refine fee |
+| `Consumer-goods.md` | Consumer goods | What each station type consumes; population profit; reverse lookup |
+| `Player-stations.md` | Player stations | Founding, trade settings, tax, stock, policies, offline simulation |
+
+GitHub turns a filename like `Player-stations.md` into the page title **"Player stations"**, and links such as
+`[Player stations](Player-stations)` resolve to it. `Home.md` and `_Sidebar.md` are GitHub-wiki special pages.
+
+## Publishing to a GitHub wiki
+
+A GitHub wiki is its own git repository at `https://github.com/<user>/<repo>.wiki.git`. To publish, copy the
+contents of `pages/` into a clone of that wiki repo (the `.md` files live at its top level), commit and push.
+You can also paste a page's Markdown into the wiki web editor.
+
+## Regenerating the data pages
+
+`Goods`, `Production`, `Refining` and `Consumer-goods` are **generated** from the game source – do not hand-edit
+their data rows. To rebuild after a game update:
+
+```sh
+# run from the repository root
+python wiki/tools/_gen_goods.py
+python wiki/tools/_gen_production.py
+python wiki/tools/_gen_refining.py
+python wiki/tools/_gen_consumergoods.py
+```
+
+`Trading-and-Prices.md` and `Player-stations.md` are written by hand (mechanics prose) and have no generator.
+
+## Dependency on the game files
+
+The generators read the unpacked game scripts from `Avorion/data/scripts/...`. That `Avorion/` folder holds the
+game's own files and is **git-ignored**, so it is not part of this repository. To regenerate the pages you must
+have the Avorion game files unpacked into `Avorion/` at the repo root. The finished pages in `pages/` and the
+facts in `extraction/` are committed, so they are usable without the game files – only regeneration needs them.
+
+## Notes
+
+- Math uses GitHub's `$...$` / `$$...$$` syntax (rendered with MathJax on GitHub).
+- Individual goods are shown as plain text, not links, because there is one combined `Goods` catalog page rather
+  than a page per commodity.
+- GitHub wikis cannot sort tables (no client-side scripting), so the large catalog tables render as static
+  tables.
