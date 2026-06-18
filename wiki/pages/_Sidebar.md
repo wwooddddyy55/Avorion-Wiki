@@ -7,3 +7,4 @@
 - [Refining](Refining)
 - [Consumer goods](Consumer-goods)
 - [Player stations](Player-stations)
+- [Trade Contracts](Trade-Contracts)

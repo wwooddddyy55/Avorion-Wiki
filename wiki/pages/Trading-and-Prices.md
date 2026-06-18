@@ -156,6 +156,7 @@ factions, or between factions whose relations are below −40,000.
 - [Production](Production) – factory recipes and yields
 - [Refining](Refining) – turning ore and scrap into materials
 - [Player stations](Player-stations) – owning and operating your own stations
+- [Trade Contracts](Trade-Contracts) – sending captained ships out on automated trade routes
 
 ---
-*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods)*
+*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods) · [Trade Contracts](Trade-Contracts)*
