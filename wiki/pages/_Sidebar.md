@@ -15,3 +15,17 @@
 - [Turret crafting](Turret-crafting)
 - [Torpedoes](Torpedoes)
 - [Defensive systems](Defensive-systems)
+
+**Fleet & Captains**
+- [Captains](Captains)
+- [Captain classes](Captain-classes)
+- [Captain perks](Captain-perks)
+- [Fleet commands](Fleet-commands)
+
+**Progression & Missions**
+- [Missions](Missions)
+- [Story missions](Story-missions)
+- [Events](Events)
+- [Building knowledge](Building-knowledge)
+- [Ship orders](Ship-orders)
+- [Encyclopedia](Encyclopedia)

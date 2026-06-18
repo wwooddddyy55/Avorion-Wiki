@@ -30,6 +30,16 @@ wiki/
 | `Turret-crafting.md` | Turret crafting | Per-weapon Turret Factory ingredients and the stat each raises |
 | `Torpedoes.md` | Torpedoes | Torpedo bodies, warheads, damage profiles |
 | `Defensive-systems.md` | Defensive systems | Shield boosters, resistances, weaknesses, point defense |
+| `Missions.md` | Missions | How missions work, the side-mission catalog, rewards, tutorials |
+| `Story-missions.md` | Story missions | The main artifact/barrier questline and its boss steps |
+| `Events.md` | Events | Distress signals, ambushes, headhunters, roaming bosses, scheduling |
+| `Building-knowledge.md` | Building knowledge | Material unlock tiers, prices, sockets, how to acquire each |
+| `Ship-orders.md` | Ship orders | The fleet order types you assign to ships |
+| `Captains.md` | Captains | Captain tiers, levels, salary formula, ambush risk |
+| `Captain-classes.md` | Captain classes | The nine class specializations and their ship bonuses |
+| `Captain-perks.md` | Captain perks | All 21 perks, their effects, and opposing pairs |
+| `Fleet-commands.md` | Fleet commands | The background captain commands: mine, trade, scout, expedition, etc. |
+| `Encyclopedia.md` | Encyclopedia | The in-game help book: how to open it and its full table of contents |
 
 GitHub turns a filename like `Player-stations.md` into the page title **"Player stations"**, and links such as
 `[Player stations](Player-stations)` resolve to it. `Home.md` and `_Sidebar.md` are GitHub-wiki special pages.
@@ -54,8 +64,10 @@ python wiki/tools/_gen_consumergoods.py
 ```
 
 The mechanics-prose pages — `Trading-and-Prices.md`, `Player-stations.md`, `Trade-Contracts.md`,
-`Combat.md`, `Weapons.md`, `Turret-crafting.md`, `Torpedoes.md` and `Defensive-systems.md` — are
-written by hand from the game scripts and have no generator.
+`Combat.md`, `Weapons.md`, `Turret-crafting.md`, `Torpedoes.md`, `Defensive-systems.md`, `Missions.md`,
+`Story-missions.md`, `Events.md`, `Building-knowledge.md`, `Ship-orders.md`, `Captains.md`,
+`Captain-classes.md`, `Captain-perks.md`, `Fleet-commands.md` and `Encyclopedia.md` —
+are written by hand from the game scripts and have no generator.
 
 ## Dependency on the game files
 
