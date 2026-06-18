@@ -24,6 +24,12 @@ wiki/
 | `Refining.md` | Refining | Materials, ore/scrap → material mappings, the refine fee |
 | `Consumer-goods.md` | Consumer goods | What each station type consumes; population profit; reverse lookup |
 | `Player-stations.md` | Player stations | Founding, trade settings, tax, stock, policies, offline simulation |
+| `Trade-Contracts.md` | Trade Contracts | Automated trade routes flown by a Merchant captain |
+| `Combat.md` | Combat | Damage types, shields vs hull, rarity/tech scaling |
+| `Weapons.md` | Weapons | Turret weapon types: damage type, fire rate, range, behaviour |
+| `Turret-crafting.md` | Turret crafting | Per-weapon Turret Factory ingredients and the stat each raises |
+| `Torpedoes.md` | Torpedoes | Torpedo bodies, warheads, damage profiles |
+| `Defensive-systems.md` | Defensive systems | Shield boosters, resistances, weaknesses, point defense |
 
 GitHub turns a filename like `Player-stations.md` into the page title **"Player stations"**, and links such as
 `[Player stations](Player-stations)` resolve to it. `Home.md` and `_Sidebar.md` are GitHub-wiki special pages.
@@ -47,7 +53,9 @@ python wiki/tools/_gen_refining.py
 python wiki/tools/_gen_consumergoods.py
 ```
 
-`Trading-and-Prices.md` and `Player-stations.md` are written by hand (mechanics prose) and have no generator.
+The mechanics-prose pages — `Trading-and-Prices.md`, `Player-stations.md`, `Trade-Contracts.md`,
+`Combat.md`, `Weapons.md`, `Turret-crafting.md`, `Torpedoes.md` and `Defensive-systems.md` — are
+written by hand from the game scripts and have no generator.
 
 ## Dependency on the game files
 
