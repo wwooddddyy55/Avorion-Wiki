@@ -20,6 +20,12 @@ A player-facing wiki for **Avorion**, focused on game mechanics derived directly
 - **[Torpedoes](Torpedoes)** – torpedo bodies, warheads and damage profiles
 - **[Defensive systems](Defensive-systems)** – shields, resistances, weaknesses and point defense
 
+## Enemies & Bosses
+
+- **[Enemy AI](Enemy-AI)** – the autonomous behaviour states NPCs run, and the persecutors that hunt you
+- **[Special enemies](Special-enemies)** – teleporters, summoners, loot carriers, and how enemy waves scale toward the core
+- **[World bosses](World-bosses)** – the unique named boss encounters and their guaranteed Legendary drops
+
 ## Fleet & Captains
 
 - **[Captains](Captains)** – tiers, levels, salary and the risk of running fleet commands

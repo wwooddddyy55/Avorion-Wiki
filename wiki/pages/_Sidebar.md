@@ -16,6 +16,11 @@
 - [Torpedoes](Torpedoes)
 - [Defensive systems](Defensive-systems)
 
+**Enemies & Bosses**
+- [Enemy AI](Enemy-AI)
+- [Special enemies](Special-enemies)
+- [World bosses](World-bosses)
+
 **Fleet & Captains**
 - [Captains](Captains)
 - [Captain classes](Captain-classes)
