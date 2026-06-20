@@ -40,3 +40,7 @@
 - [Maps and charts](Maps-and-charts)
 - [Deployable beacons](Deployable-beacons)
 - [Special items](Special-items)
+
+**Mods**
+- [XSF: Arms Generator](XSF-Arms-Generator)
+- [Xavorion: Weaponry](Xavorion-Weaponry)
