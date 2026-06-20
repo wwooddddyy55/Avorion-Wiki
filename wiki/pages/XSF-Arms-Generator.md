@@ -15,10 +15,13 @@ rebuilds every armed turret deterministically from four stacking **scaling funct
 **material**, **rarity** and **tech** — driven by a per-weapon archetype defined in
 [Xavorion: Weaponry](Xavorion-Weaponry).
 
-This page documents the engine: how it overrides the vanilla generator, the order it applies its
-stages, and the exact math each stage runs. For the weapon catalog those stages are applied to, see
-[Xavorion: Weaponry](Xavorion-Weaponry). For vanilla turret generation and damage types, see
-[Weapons](Weapons) and [Combat](Combat).
+The practical payoff for a player: turrets stop being slot-machine pulls. A weapon's stats follow directly
+from four readable inputs — its **tech level**, its **rarity**, the **material** it's made of, and which
+**barrel** it rolled — so once you know how those four dials work you can predict what any drop will do and
+tell *why* one turret beats another. This page documents those dials: how the engine takes over from the
+vanilla generator, the order it applies each stage, and the exact math each one runs. For the weapon
+catalog the engine builds from, see [Xavorion: Weaponry](Xavorion-Weaponry); for vanilla turret generation
+and damage types, see [Weapons](Weapons) and [Combat](Combat).
 
 > **Mod metadata.** `version = "2.5.3"`, `serverSideOnly = false`, `clientSideOnly = false`,
 > `saveGameAltering = true`. Dependencies: the XSF framework `2918443067` (min `2.3.9`) and
@@ -26,10 +29,11 @@ stages, and the exact math each stage runs. For the weapon catalog those stages 
 
 ## How it overrides the vanilla generator
 
-The mod ships files at the same script paths as the base game's generator libraries. Each one **backs
-up the original function once**, then redefines it to branch on `ArmsGenerator.IsExtendedType(type)`:
-an *extended* weapon type (one defined in the Xavorion turret database) is routed to the new engine;
-anything else falls through to the saved vanilla function unchanged.
+The headline question for anyone running this alongside other content is *"does it break normal turrets?"*
+— and the answer is no. The mod slots in beside the base game's turret-building code rather than replacing
+it: each generator file **saves a copy of the original**, then checks whether the turret being made is a
+Xavorion weapon (`ArmsGenerator.IsExtendedType(type)`). If it is, the new engine takes over; anything else
+— vanilla turrets, other mods' turrets — falls straight through to the untouched original.
 
 | Overridden file | Vanilla function wrapped | Backup name | Extended path |
 |---|---|---|---|
@@ -43,8 +47,11 @@ mod's own archetypes use the formulas below.
 
 ## The generation pipeline
 
-`ArmsGenerator.GetTurret(rng, type, dps, tech, material, rarity, barrelType)` runs the stages in this
-fixed order (from `ArmsGenerator.lua`):
+Building one turret is an assembly line: the engine starts from the weapon's **base archetype** (the plain
+numbers listed in [Xavorion: Weaponry](Xavorion-Weaponry)) and runs it through a fixed sequence of stations,
+each layering on one of the four dials. Order matters — rarity, material and tech adjust the raw stats
+first, *then* the barrel stage splits the result into a Heavy/Gatling/etc. variant, and cooling is fitted
+last. The stages, in order (`ArmsGenerator.GetTurret`, from `ArmsGenerator.lua`):
 
 ```
 1. GetTurretMetadata      -- deep-copy the archetype's base stats (+ any BarrelTweak override)
@@ -62,9 +69,12 @@ the archetype doesn't name one.
 
 ## Base damage — the Time-To-Kill model
 
-Every archetype declares its damage as `WeaponTTK.ToDamage(seconds, counterClass, fireRate)` rather than
-a raw number. This converts *"destroy a ship of this class in this many seconds"* into a Tech-1, Iron,
-per-shot damage value (`ArmsLibrary.lua`):
+The clever bit of the whole system is that weapon damage isn't a number a designer picked — it's worked
+*backwards* from a goal. Each weapon says "I should destroy a ship of *this* size in *this* many seconds,"
+and the engine solves for the per-shot damage that achieves it. That's why the catalog lists a **Time-To-Kill**
+instead of a damage figure, and why a slow weapon and a fast one aimed at the same target end up comparably
+lethal — they're balanced to the same kill time. The conversion (`WeaponTTK.ToDamage(seconds, counterClass,
+fireRate)`, from `ArmsLibrary.lua`) produces the Tech-1, Iron baseline that every other stage then scales:
 
 ```
 durability  = Volume[counterClass] * 4          -- vanilla "Volume * Material * 4" durability
@@ -84,9 +94,13 @@ So a weapon set to kill an M3 (`Volume 1000`) in 5 s at 1 shot/s starts at
 
 ## Tech & rarity damage scaling
 
-`ArmsGenerator.GetScaledShotDamage` multiplies that base by a tech factor and a rarity factor. The two
-multipliers default to `7` and `2` but an archetype may override them (`TechDamageMult`,
-`RarityDamageMult`); each has `1.0` subtracted, and a result below `0` is forced to `1.0`:
+This is what makes a high-tech Legendary turret hit so much harder than an early grey one. The Iron baseline
+from the TTK model gets multiplied twice — once by **tech level** and once by **rarity** — and the two
+stack. Tech is the bigger lever by far: at the top of the band it roughly **7×** the base, while rarity adds
+up to about **2×**, so finding higher-tech weapons matters more for raw damage than chasing rarity. Most
+weapons use those default multipliers, but a few archetypes dial them down to lean on their other strengths
+(`ArmsGenerator.GetScaledShotDamage`; each multiplier has `1.0` subtracted, and a negative result is forced
+to `1.0`):
 
 ```
 techMult   = (archetype.TechDamageMult   or 7) - 1.0      -- default 6
@@ -107,10 +121,18 @@ uses `TechDamageMult = 3.0, RarityDamageMult = 1.5`, and the fighter proton torp
 
 ## Barrel functions
 
-`BarrelFunction_Default.lua` turns a single archetype into one of four **barrel variants**. Each variant
-fixes the **barrel count**, applies **block penetration**, and multiplies the base stats by a set of
-**auto-balancing factors** (used only when the archetype/`BarrelTweak` hasn't already supplied an exact
-value):
+The **barrel** is why two turrets of the same weapon can play completely differently. One archetype splits
+into four variants, each a distinct feel:
+
+- **Heavy** – a single barrel firing slow, enormous shots (×5 damage, half the fire rate) at long range,
+  and it drills through armour (penetration 9). The sniper/brawler build.
+- **Medium** – two barrels, a balanced middle ground with modest penetration (3).
+- **Burst** – three barrels that dump a tight burst of shots and always pierce shields, then pause.
+- **Gatling** – four barrels of rapid, lighter fire; the sustained-DPS, fighter-shredding build.
+
+Mechanically, each variant locks in a **barrel count** and **block penetration**, then multiplies the
+base stats by a table of **auto-balancing factors** (applied only where the archetype hasn't already fixed
+an exact value, from `BarrelFunction_Default.lua`):
 
 | Barrel | Barrels | Tracking | Recoil | Range | Accuracy | Velocity | ShotDamage | Volley/s | Reload | ShootTime |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
@@ -138,8 +160,11 @@ Accuracy is finally clamped to `0.1–1.0` and tracking to `0.01–3.0`.
 
 ## Material functions
 
-`MaterialFunction_Default.lua` multiplies the post-barrel stats by per-material factors. Columns left at
-`×1.0` for every material (Size, Slot, VolleySize) are omitted; the rest:
+The **material** a turret is built from (Iron up to Avorion) gives each tier its own personality, not just
+a flat power bump. The engine multiplies the stats by a per-material table, and the pattern is the
+interesting part: higher materials aren't strictly better, they're *differently* tuned, so picking a
+material is a trade-off rather than an upgrade. The table below lists every factor that isn't ×1.0
+(Size, Slot and VolleySize are unchanged by material, so they're omitted), from `MaterialFunction_Default.lua`:
 
 | Material | Crew | Tracking | Recoil | Range | Accuracy | Velocity | ShotDmg | Reload | ShootTime | Energy/s | Size | BasePrice |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
@@ -158,8 +183,12 @@ low-recoil, Avorion is broadly superior but crew-, energy- and price-heavy.
 
 ## Rarity functions
 
-`RarityFunction_Default.lua` uses **one function for all seven rarities** (Petty `-1` … Legendary `5`),
-scaling each stat by the rarity's integer `value`:
+Where material trades stats off against each other, **rarity** is the dial that broadly *improves*
+everything — a higher-rarity turret reaches farther, aims better, fires faster and reloads quicker than a
+lower one of the same weapon. There's no separate roll per rarity; one formula scales each stat by the
+rarity's number (Petty `-1` through Legendary `5`), so the gain is smooth and predictable as you climb.
+A Petty weapon is actually slightly *penalised* below baseline, which is why the lowest rarities feel
+genuinely weak (`RarityFunction_Default.lua`):
 
 | Stat | Formula | Range (Petty → Legendary) |
 |---|---|---|
@@ -173,7 +202,11 @@ scaling each stat by the rarity's integer `value`:
 
 ## Cooling systems
 
-`CoolingFunction.lua` assigns the turret's heat/charge model from the archetype's `CoolingType`:
+Cooling decides whether a weapon can **fire continuously or has to pace itself** — the difference between a
+gun you hold the trigger on and one that overheats or drains your reactor. Each weapon family is assigned
+one of three models by its archetype, and the choice matches the weapon's character: physical guns build
+**heat**, energy-fed weapons (blasters, lasers, railguns) run off a **battery** reservoir, and
+continuous-drain weapons like zappers **bleed** power the whole time they fire (`CoolingFunction.lua`):
 
 | Cooling type | Heat unit | Reservoir | Notes |
 |---|---|---|---|
@@ -185,9 +218,13 @@ scaling each stat by the rarity's integer `value`:
 
 ## Pricing
 
-`inventoryitemprice.lua` overrides `ArmedObjectPrice` for extended types. It splits the price *span*
-`Delta = MaxPrice - BasePrice` into three weighted parts using `FMath.ScalarCut(Delta, {10, 5, 3})` —
-which divides a value into pieces **proportional to the weights** (total weight `10+5+3 = 18`):
+A weapon's price climbs by the same three dials that drive its power, weighted the same way damage is — so
+what you pay tracks what you get. Each archetype defines a **base** and **max** price (the columns in
+[Xavorion: Weaponry](Xavorion-Weaponry)), and the engine fills the gap between them according to the
+turret's tech, rarity and material. **Tech moves the price most, rarity next, material least** — the same
+pecking order as damage scaling — so a high-tech turret is the expensive one even at low rarity. The split
+uses `FMath.ScalarCut(Delta, {10, 5, 3})`, which divides the span in proportion to those weights (total
+`10+5+3 = 18`), from `inventoryitemprice.lua`:
 
 ```
 Delta   = MaxPrice - BasePrice

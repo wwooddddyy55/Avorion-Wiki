@@ -5,42 +5,72 @@
      companion mod XSF: Arms Generator (2992808396) — see that page. Formulas as monospace code blocks. -->
 # Xavorion: Weaponry
 
-**Xavorion: Weaponry** (Workshop ID `2992809109`, by **LM13**) is the *"complete weapons overhaul for
-Xavorion"*. Where [XSF: Arms Generator](XSF-Arms-Generator) is the **engine** that scales turret stats,
-this mod is the **content**: the turret database of named weapon archetypes, the fighter-squad and
-shield-booster system modules, and the custom weapon-sound pools. Every turret here is generated through
-the Arms Generator pipeline — barrel, material, rarity and tech scaling — so the values below are the
-**M1-tech, Iron, base archetype** before that scaling is applied.
+**Xavorion: Weaponry** (Workshop ID `2992809109`, by **LM13**) is a *"complete weapons overhaul for
+Xavorion"* — it replaces the random vanilla turrets with a designed armoury of **named weapon families**,
+each built around a clear job: flak auto-cannons to swat fighters, slow railguns that punch through hull,
+torpedoes that ignore shields, and so on. Where [XSF: Arms Generator](XSF-Arms-Generator) is the **engine**
+that turns a weapon into concrete numbers, this mod is the **content** it works on: the weapon catalog
+below, plus a fighter-squad module, a shield-booster module, and the custom firing sounds.
 
-For how those base numbers are scaled up by tech/rarity/material and split into barrel variants, read
-[XSF: Arms Generator](XSF-Arms-Generator) first. For vanilla weapon types and damage types, see
-[Weapons](Weapons) and [Combat](Combat).
+Because every weapon is generated through that engine, the values in these tables are the **starting
+point only** — the Iron, lowest-tech, base form of each weapon. A turret you actually loot or buy is the
+same archetype scaled up by its **tech level, rarity and hull material** and split into a **barrel variant**
+(see [XSF: Arms Generator](XSF-Arms-Generator) for how much that adds). Read the base tables as *relative*
+character — how a weapon fires, what it's good against, how it ranks against its siblings — rather than as
+the final damage you'll see in-game. For vanilla weapon types and damage types, see [Weapons](Weapons)
+and [Combat](Combat).
 
 > **Mod metadata.** `version = "2.6.5"`, `serverSideOnly = false`, `clientSideOnly = false`,
 > `saveGameAltering = true`. Dependencies: `2918443067`, `2923179923`, `2992808396` (all min `2.3.9`),
 > optional `2992808561` / `2992808472`, and `Avorion` `2.0`–`2.5.*`.
 
-## How to read the archetype tables
+## How to read the weapon tables
 
-Each archetype declares its damage as a **Time-To-Kill** target, not a flat number:
-`ShotDamage = WeaponTTK.ToDamage(TTK, vs, fireRate)` means *"sized to destroy a ship of class `vs` in
-`TTK` seconds"*. The base per-shot damage works out to
-`(Volume[vs] * 4 / TTK) / 5 / fireRate` (see [the TTK model](XSF-Arms-Generator#base-damage--the-time-to-kill-model)),
-then multiplied by tech and rarity. Columns:
+**Ship classes (M1–M8).** Every weapon is rated against a ladder of ship sizes, from **M1** (the smallest
+— fighters and tiny corvettes) up to **M8** (capital ships and bosses). Two columns place each weapon on
+that ladder:
 
-- **Class** – the ship class the turret is *intended for* (`TargetClass`); **vs** – the class its damage
-  is *balanced to kill* (`CounterClass`).
-- **Fire/s** – base `VolleyPerSecond`. **Range** is optimal reach; **Energy** is `EnergyPerSecond` where
-  the weapon is energy-fed. **Reload** is `ReloadTime` in seconds; **Crew**/**Size**/**Slot** are the
-  turret requirements. **Cool.** is the cooling model (see [XSF: Arms Generator](XSF-Arms-Generator#cooling-systems)).
+- **Class** – the size of hull the weapon is *built to sit on*. A Class M6 turret is heavy enough that it
+  only makes sense on a large ship.
+- **vs** – the enemy size its damage is *tuned to kill*. This is the weapon's intended prey, and it's why
+  the families ladder upward: an M5 weapon "vs M5" is your line gun, while one rated "vs M8" exists to
+  hurt the biggest targets.
 
-Every archetype also generates in **Heavy / Medium / Burst / Gatling** barrel variants. Names ending
-`NPC` are flagged NPC-only loadout weapons.
+**Damage as Time-To-Kill.** Instead of a flat damage number, each weapon states how *fast* it should kill
+its target: `WeaponTTK.ToDamage(TTK, vs, fireRate)` means *"sized to destroy a ship of class `vs` in `TTK`
+seconds."* A lower **TTK** is more lethal per second. The engine converts that into per-shot damage
+(`(Volume[vs] × 4 / TTK) / 5 / fireRate`, see [the TTK model](XSF-Arms-Generator#base-damage--the-time-to-kill-model))
+and then multiplies it by tech and rarity. So TTK is best read as the weapon's *ambition* against its
+prey, not a literal kill timer at base tech.
+
+**The other columns.** **Fire/s** is shots per second (higher = more sustained, lower = slower but harder
+hits). **Acc** is accuracy, **Range** the reach in km. **Energy** is the power draw for energy-fed weapons
+— a high figure means it's only practical on a ship with a strong reactor. **Reload**, **Crew**, **Size**
+and **Slot** are the turret's cost in seconds, manpower and ship space. **Cool.** names the cooling model
+(see [cooling systems](XSF-Arms-Generator#cooling-systems)).
+
+**Recurring terms.** A few behaviours show up across families:
+
+- **Flak** – the shot explodes on impact in a small radius, splashing nearby targets; ideal against
+  clustered fighters, drones and torpedoes.
+- **Seeking** – the projectile homes onto its target instead of flying straight, so it lands on fast or
+  evasive ships.
+- **Block / shield penetration** – the shot drills through several armour blocks (or bypasses shields)
+  instead of stopping at the first, hitting the soft interior.
+- **Coaxial** – the turret only fires straight ahead along the ship's axis; you aim it by aiming the ship,
+  in exchange for stronger stats.
+- **Barrel variants.** Every weapon also generates in **Heavy / Medium / Burst / Gatling** forms that
+  trade fire rate for hitting power (and sometimes change behaviour entirely). Names ending **NPC** are
+  enemy-only versions you won't loot.
 
 ## Combat Artillery — Auto-Cannons
 
-`WeaponTech.Cannon`, sound `"ac"`, **Heat** cooling, custom **AC** barrel/rarity scaling. All are
-**flak** rounds (`bFlak`, `bImpactExplode`) with `ExplosionRadius 10` (125 on the Big Bang).
+Mid-range **flak** artillery: every round explodes on impact (`ExplosionRadius 10`), so the line shines
+against anything small and clustered — fighter swarms, drones, torpedoes — while still threatening larger
+ships. They climb the whole ladder, from the light **AC-3-C** up to the slow, devastating **AC-XLA "Big
+Bang."** Higher tiers trade fire rate for reach and per-shot weight: the cannons get bigger, slower and
+longer-ranged as you go down the table.
+_(Engine: `WeaponTech.Cannon`, **Heat** cooling, custom **AC** scaling, sound `"ac"`.)_
 
 | Name | Class | vs | TTK | Fire/s | Acc | Range | Crew | Size | Slot | Reload | Price (Base→Max) |
 |---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|---|
@@ -55,8 +85,13 @@ Every archetype also generates in **Heavy / Medium / Burst / Gatling** barrel va
 
 ## Combat Blasters — Plasma Guns
 
-`WeaponTech.Blaster`, **Battery** cooling, `WeaponRecoil.None`, no flak. Projectile colour shifts by tier
-(HSV hue 206° → 172°). The PPG line uses the default fire sound; HPE uses `"hpe"`.
+The energy-fed **workhorse line** — steady, accurate, recoilless guns that form the backbone of a general
+loadout. The **PPG** ("Pulse Plasma Gun") models cover the early-to-mid ladder; the heavier **HPE**
+("Heavy Plasma Emitter") tiers take over for big ships, at a steep energy cost (the M7 draws **28 GW**, so
+these belong on a ship with reactor capacity to spare). There's no flak here — blasters are a clean,
+single-target damage dealer rather than a crowd-clearer. Projectile colour shifts toward blue as the tier
+rises.
+_(Engine: `WeaponTech.Blaster`, **Battery** cooling, no recoil; PPG uses the default fire sound, HPE uses `"hpe"`.)_
 
 | Name | Class | vs | TTK | Fire/s | Acc | Range | Energy | Crew | Size | Slot | Reload | Price |
 |---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|---|
@@ -69,9 +104,13 @@ Every archetype also generates in **Heavy / Medium / Burst / Gatling** barrel va
 
 ## Combat Disruptors — Zappers & EMP Guns
 
-`DamageType.Electric` throughout. Two families: **Zappers** (`WeaponTech.EMP`, **Drain** cooling at the
-extremes) and **EMP Guns** (`WeaponTech.Blaster` tech but Electric damage, **Battery** cooling). Damage
-is boosted by an explicit multiplier on top of the TTK base.
+The **Electric-damage** line, which hits shields and hull about equally — useful when you want to grind
+down a target's protection rather than specialise against one or the other. It splits into two flavours:
+**Zappers (ZAP)**, continuous-drain beams that pour out a steady stream, and **EMP Guns (EEG)**, which
+fire in faster bursts. Both get an extra damage multiplier on top of the usual TTK base (shown as
+**TTK ×mult**), so they punch a little above their listed kill time. The capstone **ZAP-XLA "Zeus"** is a
+ship-scale beam with a brutal **350 GW** draw.
+_(Engine: Zappers `WeaponTech.EMP`; EMP Guns `WeaponTech.Blaster` tech with Electric damage. Cooling is **Drain** or **Battery** as noted per row.)_
 
 | Name | Class | vs | Tech | TTK ×mult | Fire/s | Acc | Range | Energy | Crew | Size | Slot | Reload | Cool. | Sound |
 |---|---|---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|---|---|
@@ -86,9 +125,13 @@ is boosted by an explicit multiplier on top of the TTK base.
 
 ## Combat Lasers
 
-`WeaponTech.Laser` (or `PulseLaser`), **Battery** cooling, `WeaponRecoil.None`. The whole line overrides
-the damage multipliers to `TechDamageMult = 3.0, RarityDamageMult = 1.5` and uses **RBE** scaling. In
-**Burst** and **Gatling** barrels the laser becomes a **Pulse-Laser**.
+Pin-point **beam weapons** (the **RBE** family) — near-perfect accuracy (`0.98`) and instant hit, so they
+never miss and never need leading. The trade-off is energy hunger that grows viciously with tier: the
+early **P-RBE-1** sips half a gigawatt, but the **RBE-X-C "Deathray"** demands a colossal **1,000 GW** and
+1,000 crew, making it a true capital-ship signature weapon. Lasers scale more gently with tech and rarity
+than other families (the line caps its multipliers lower), so they reward steady accurate fire over spikes.
+In the **Burst** and **Gatling** barrels the beam becomes a rapid **pulse-laser** instead of a steady stream.
+_(Engine: `WeaponTech.Laser`/`PulseLaser`, **Battery** cooling, no recoil; `TechDamageMult 3.0`, `RarityDamageMult 1.5`, **RBE** scaling.)_
 
 | Name | Class | vs | Tech | TTK | Fire/s | Acc | Range | Energy | Crew | Size | Slot | Reload | Price |
 |---|---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|---|
@@ -105,8 +148,13 @@ the damage multipliers to `TechDamageMult = 3.0, RarityDamageMult = 1.5` and use
 
 ## Combat Launchers — Missiles
 
-`WeaponTech.Launcher`, **Heat** cooling. Short-range (**SRM**) and long-range (**LRM**) missiles, with
-seeking and flak behaviour varying by model.
+The missile line, built for **reach and area denial**. It comes in two ranges — short-range **SRM** and
+long-range **LRM** — and each model mixes two tricks: **seeking** (the missile homes in, so it lands on
+fast or distant ships) and **flak** (it bursts on arrival, splashing whatever is nearby). The early
+**SRM-1-GC** is a pure homing missile for chasing fighters; the mid-tier models add flak to clear groups;
+the **LRM-X-A "Rainfire"** combines a wide explosion with a long reach to saturate an area from afar. The
+**Behaviour** column spells out which tricks each model carries.
+_(Engine: `WeaponTech.Launcher`, **Heat** cooling.)_
 
 | Name | Class | vs | TTK | Fire/s | Acc | Range | Crew | Size | Slot | Reload | Behaviour |
 |---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|---|
@@ -118,8 +166,12 @@ seeking and flak behaviour varying by model.
 
 ## Combat Machineguns
 
-`WeaponTech.Gun` (SMG/MG) and `WeaponTech.Bolter` (BMG), **Heat** cooling. The MG and bolters add a
-damage and/or recoil multiplier; bolters are near-perfectly accurate and coaxial.
+The cheap, **high-rate-of-fire** small-ship line — the first weapons you'll arm a starting ship with. The
+**SMG** and **MG** are spray weapons that stack lots of light shots quickly; the **MG** hits harder but
+kicks more (recoil ×1.3). The **bolter (BMG)** is the precision cousin: near-perfect accuracy (`0.99`) and
+**coaxial**, so it's aimed by pointing the ship and rewards that with reliable hits. All four sit at the
+bottom of the ladder, for fighters and corvette-scale targets.
+_(Engine: `WeaponTech.Gun` for SMG/MG, `WeaponTech.Bolter` for BMG, **Heat** cooling.)_
 
 | Name | Class | vs | Tech | TTK | Fire/s | Acc | Range | Crew | Size | Slot | Reload | Sound | Notes |
 |---|---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|---|---|
@@ -130,8 +182,11 @@ damage and/or recoil multiplier; bolters are near-perfectly accurate and coaxial
 
 ## Combat Railguns
 
-`WeaponTech.Rail`, **Battery** cooling, sound `"ril"`, **RIL** scaling. All fire at a constant slow
-`0.25` shots/s with `0.98` accuracy — the slow, hard-hitting precision line.
+The **alpha-strike** line: every railgun fires just one shot every four seconds (`0.25`/s) at near-perfect
+accuracy, putting all its damage into rare, heavy, precise hits. They reward picking your shot and landing
+it cleanly rather than hosing down a target, and their long reach lets them open fire first. Energy draw
+climbs hard with tier; the capstone **RX-IL "SoulRipper"** is a 500 GW capital sniper.
+_(Engine: `WeaponTech.Rail`, **Battery** cooling, **RIL** scaling, sound `"ril"`.)_
 
 | Name | Class | vs | TTK | Fire/s | Acc | Range | Energy | Crew | Size | Slot | Reload | Price |
 |---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|---|
@@ -142,10 +197,14 @@ damage and/or recoil multiplier; bolters are near-perfectly accurate and coaxial
 
 ## Combat Proton Torpedos
 
-`WeaponTech.Torpedo`, `DamageType.AntiMatter`, **Battery** cooling, sound `"eh"`, Tesla projectile
-appearance. All carry **block penetration 6** and a high **shield-penetration chance**, fire very slow
-projectiles (≈0.1 km/s), and most are coaxial. Only the **Fighter** torpedo overrides the damage
-multipliers (`TechDamageMult 9`, `RarityDamageMult 2.5`).
+The **shield-bypassing siege** line. These Anti-Matter torpedoes drill through armour (**block
+penetration 6**) and largely **ignore shields** (high shield-penetration chance), so they hit a target's
+hull almost regardless of its defences — the answer to a heavily-shielded capital. The cost is that the
+projectiles crawl (≈0.1 km/s), so they're for slow, deliberate targets rather than dogfighting, and most
+are **coaxial** (aimed by the ship). Several entries are **NPC-only** enemy loadouts; the player-usable
+ones are marked in the **Player?** column, including the **F-PTL-2-C** fighter torpedo, which trades raw
+size for a big damage multiplier so it stays lethal on a tiny fighter hull.
+_(Engine: `WeaponTech.Torpedo`, `DamageType.AntiMatter`, **Battery** cooling, sound `"eh"`.)_
 
 | Name | Class | vs | TTK | Fire/s | Acc | Range | ShieldPen | Expl. R | Crew | Size | Slot | Energy | Player? |
 |---|---|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|---|
@@ -162,9 +221,11 @@ multipliers (`TechDamageMult 9`, `RarityDamageMult 2.5`).
 
 ## Fighter squad system
 
-`systems/fightersquadsystem.lua` overrides `getBonuses(seed, rarity, permanent)`. Squad count comes from
-the vanilla `getNumSquads`; the **production** bonus is recomputed from rarity and two tunable galaxy
-constants:
+This is a **system upgrade** (the kind you slot into a ship's upgrade sockets), not a turret. It grants
+extra fighter squads and boosts your fighter **production rate** — how fast a carrier rebuilds its wing.
+The squad count is left to the vanilla rules, but the mod rewrites the production bonus so it scales with
+the upgrade's **rarity** and with two galaxy-wide tuning constants
+(`systems/fightersquadsystem.lua`, overriding `getBonuses(seed, rarity, permanent)`):
 
 ```
 baseValue  = (rarity.value + 3) * GalaxyModule.FighterProductionMult
@@ -179,8 +240,11 @@ defined in the suite's galaxy config, so production scales with rarity but is ce
 
 ## Shield booster system
 
-`systems/shieldbooster.lua` overrides `getBonuses` and `getEnergy` with an explicit **per-rarity table**
-(the randomised vanilla durability roll is computed but then replaced by this fixed value):
+Another **system upgrade** — this one adds shield capacity. The mod throws away the vanilla "random roll"
+and instead pins shield HP and energy cost to a clean **per-rarity table**, so you always know exactly what
+a given rarity gives you. The jump between tiers is steep (a Legendary booster carries **half a million**
+shield HP, 500× the Petty one), making rarity the thing to chase here
+(`systems/shieldbooster.lua`, overriding `getBonuses` and `getEnergy`):
 
 | Rarity | Shield HP | Energy |
 |---|--:|--:|
@@ -212,9 +276,12 @@ durability and energy.
 
 ## Weapon sounds
 
-`weaponsounds/<id>.lua` each define a `WeaponSounds` table: a `sounds` pool, an audible `range` (metres)
-and a `volume`. A weapon binds to one by setting `Sound = "<id>"`; the fire event then draws randomly
-from that pool at the given range/volume. (Some weapons point at vanilla sounds like `"flak"` instead.)
+Pure flavour, but it's why the overhaul *feels* different: each weapon family fires its own custom sound
+set rather than the stock effects. Every entry below is a small sound pool the game draws from at random
+when the weapon fires, plus how far away it can be heard (**Range**) and how loud it is (**Volume**). A
+weapon picks its set by id; a few still point at vanilla sounds like `"flak"`. The practical upshot is
+audio readability — you can tell what's shooting, and from how far, by ear
+(`weaponsounds/<id>.lua`, each defining a `WeaponSounds` table).
 
 | Sound id | Used by | Active variants | Range | Volume |
 |---|---|--:|--:|--:|
