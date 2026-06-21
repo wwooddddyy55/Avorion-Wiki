@@ -106,6 +106,7 @@ range on a weapon's secondary stats (extra elemental damage, block penetration, 
 - [Turret crafting](Turret-crafting) – building turrets at a Turret Factory and the stats each ingredient raises
 - [Torpedoes](Torpedoes) – torpedo bodies, warheads and damage
 - [Defensive systems](Defensive-systems) – shields, resistances, weaknesses and point defense
+- [Ship generation](Ship-generation) – how NPC volume, HP and turret counts scale with distance from the core
 
 ---
 *Combat & Weapons: [Combat](Combat) · [Weapons](Weapons) · [Turret crafting](Turret-crafting) · [Torpedoes](Torpedoes) · [Defensive systems](Defensive-systems)*

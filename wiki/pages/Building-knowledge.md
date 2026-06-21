@@ -95,6 +95,8 @@ find Trinium knowledge out at the rim.
 - [Production](Production) – material costs of founding and upgrading stations and ships
 - [Missions](Missions) – including the Building Knowledge tutorial mission
 - [Combat](Combat) – higher materials mean better hull, and Naonite unlocks shields
+- [Ship generation](Ship-generation) – how material strength and volume set NPC ship durability
+- [System upgrades](System-upgrades) – subsystem sockets and the modules that fill them
 
 ---
-*Player Progression & Missions: [Missions](Missions) · [Story missions](Story-missions) · [Events](Events) · [Building knowledge](Building-knowledge) · [Ship orders](Ship-orders) · [Encyclopedia](Encyclopedia)*
+*Progression & Systems: [Ship generation](Ship-generation) · [System upgrades](System-upgrades) · [Building knowledge](Building-knowledge)*

@@ -95,6 +95,7 @@ right target. See [Damage types](Combat#damage-types).
 - [Turret crafting](Turret-crafting) – building turrets and the stat each ingredient raises
 - [Torpedoes](Torpedoes) – the other main weapon system
 - [Defensive systems](Defensive-systems) – shields and point defense against these weapons
+- [System upgrades](System-upgrades) – Turret Control Subsystems that add armed, unarmed and auto turret slots
 
 ---
 *Combat & Weapons: [Combat](Combat) · [Weapons](Weapons) · [Turret crafting](Turret-crafting) · [Torpedoes](Torpedoes) · [Defensive systems](Defensive-systems)*

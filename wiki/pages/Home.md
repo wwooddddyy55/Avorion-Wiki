@@ -33,12 +33,17 @@ A player-facing wiki for **Avorion**, focused on game mechanics derived directly
 - **[Captain perks](Captain-perks)** – all 21 perks, what they do, and which ones cancel out
 - **[Fleet commands](Fleet-commands)** – the background jobs captained ships run: mine, trade, scout, expedition…
 
+## Progression & Systems
+
+- **[Ship generation](Ship-generation)** – how NPC ships and stations are procedurally built and scaled by distance from the core
+- **[System upgrades](System-upgrades)** – the subsystem modules: turret control, boosters and permanent installation
+- **[Building knowledge](Building-knowledge)** – unlocking each ship-building material and bigger ships
+
 ## Progression & Missions
 
 - **[Missions](Missions)** – how missions work, plus the repeatable side-mission catalog and rewards
 - **[Story missions](Story-missions)** – the main artifact-and-barrier questline to the galactic core
 - **[Events](Events)** – distress signals, ambushes, bounty hunters and roaming bosses
-- **[Building knowledge](Building-knowledge)** – unlocking each ship-building material and bigger ships
 - **[Ship orders](Ship-orders)** – the fleet commands you give captained ships
 - **[Encyclopedia](Encyclopedia)** – the game's built-in help book and its table of contents
 

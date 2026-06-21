@@ -27,11 +27,15 @@
 - [Captain perks](Captain-perks)
 - [Fleet commands](Fleet-commands)
 
+**Progression & Systems**
+- [Ship generation](Ship-generation)
+- [System upgrades](System-upgrades)
+- [Building knowledge](Building-knowledge)
+
 **Progression & Missions**
 - [Missions](Missions)
 - [Story missions](Story-missions)
 - [Events](Events)
-- [Building knowledge](Building-knowledge)
 - [Ship orders](Ship-orders)
 - [Encyclopedia](Encyclopedia)
 

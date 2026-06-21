@@ -109,6 +109,7 @@ otherwise bypass a shield-and-armor build.
 - [Combat](Combat) – damage types, resistances and weaknesses, shields vs hull
 - [Weapons](Weapons) – point defense and anti-fighter turrets
 - [Torpedoes](Torpedoes) – the shield-piercing and shield-deactivating threats these systems counter
+- [System upgrades](System-upgrades) – the wider upgrade framework these defensive systems are built on
 
 ---
 *Combat & Weapons: [Combat](Combat) · [Weapons](Weapons) · [Turret crafting](Turret-crafting) · [Torpedoes](Torpedoes) · [Defensive systems](Defensive-systems)*
