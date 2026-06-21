@@ -45,6 +45,9 @@
 - [Deployable beacons](Deployable-beacons)
 - [Special items](Special-items)
 
+**Factions & Diplomacy**
+- [Diplomacy and Reputation](Diplomacy-and-Reputation)
+
 **Mods**
 - [XSF: Arms Generator](XSF-Arms-Generator)
 - [Xavorion: Weaponry](Xavorion-Weaponry)

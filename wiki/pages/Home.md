@@ -54,9 +54,13 @@ A player-facing wiki for **Avorion**, focused on game mechanics derived directly
 - **[Deployable beacons](Deployable-beacons)** – message beacons, sector renaming, and marker buoys
 - **[Special items](Special-items)** – the Recall Device home-jump, the Energy Suppressor, and bound mission chips
 
+## Factions & Diplomacy
+
+- **[Diplomacy and Reputation](Diplomacy-and-Reputation)** – the −100k…+100k relation scale, the War/Ceasefire/Neutral/Allies statuses, what raises and lowers standing, and negotiating tribute, ceasefires and alliances
+
 ## Mods
 
 - **[XSF: Arms Generator](XSF-Arms-Generator)** – the Xavorion suite's procedural turret-stat engine: barrel, material, rarity and tech scaling, with the exact damage, cooling and pricing formulas
 - **[Xavorion: Weaponry](Xavorion-Weaponry)** – the weapon overhaul built on it: every weapon archetype (M1–M8), plus the fighter-squad, shield-booster and weapon-sound systems
 
-*More sections (ships, factions, world generation, …) to follow.*
+*More sections (ships, world generation, …) to follow.*
