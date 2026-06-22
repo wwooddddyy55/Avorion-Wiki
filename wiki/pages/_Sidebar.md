@@ -44,6 +44,7 @@
 - [Maps and charts](Maps-and-charts)
 - [Deployable beacons](Deployable-beacons)
 - [Special items](Special-items)
+- [Research Station](Research-Station)
 
 **Factions & Diplomacy**
 - [Diplomacy and Reputation](Diplomacy-and-Reputation)

@@ -53,6 +53,7 @@ A player-facing wiki for **Avorion**, focused on game mechanics derived directly
 - **[Maps and charts](Maps-and-charts)** – chips that fill in the Galaxy Map: faction territory, gate updates, AI tracking
 - **[Deployable beacons](Deployable-beacons)** – message beacons, sector renaming, and marker buoys
 - **[Special items](Special-items)** – the Recall Device home-jump, the Energy Suppressor, and bound mission chips
+- **[Research Station](Research-Station)** – reroll turrets, blueprints and system upgrades into new randomized gear, with rarity-bump odds, Auto-Research and hidden recipes
 
 ## Factions & Diplomacy
 
