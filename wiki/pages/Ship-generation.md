@@ -146,4 +146,4 @@ that keep a populated sector feeling alive are attached.
 - [Goods](Goods) – the cargo and richness rewards that scale with distance from the core
 
 ---
-*Progression & Systems: [Ship generation](Ship-generation) · [System upgrades](System-upgrades) · [Building knowledge](Building-knowledge)*
+*Progression & Systems: [Ship generation](Ship-generation) · [Ship stats](Ship-stats) · [System upgrades](System-upgrades) · [Building knowledge](Building-knowledge)*

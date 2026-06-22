@@ -194,6 +194,7 @@ the tooltip arrows before committing one permanently.**
 - [Weapons](Weapons) – the armed, unarmed, defensive and auto turrets the TCS modules enable
 - [Defensive systems](Defensive-systems) – the shield, resistance and anti-boarding upgrades
 - [Combat](Combat) – where turret slots, energy and speed translate into effectiveness
+- [Ship stats](Ship-stats) – the build-mode stats these modules boost, and how blocks set them
 
 ---
-*Progression & Systems: [Ship generation](Ship-generation) · [System upgrades](System-upgrades) · [Building knowledge](Building-knowledge)*
+*Progression & Systems: [Ship generation](Ship-generation) · [Ship stats](Ship-stats) · [System upgrades](System-upgrades) · [Building knowledge](Building-knowledge)*

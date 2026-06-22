@@ -12,7 +12,7 @@ If you're not sure where to begin, read these in order — each links onward int
 1. **[Getting Started](Getting-Started)** – the whole journey in one page
 2. **[Combat](Combat)** & **[Weapons](Weapons)** – surviving your first fights
 3. **[Trading and Prices](Trading-and-Prices)**, **[Refining](Refining)** & **[Missions](Missions)** – your first credits
-4. **[Building knowledge](Building-knowledge)** & **[System upgrades](System-upgrades)** – a bigger, better ship
+4. **[Building knowledge](Building-knowledge)**, **[Ship stats](Ship-stats)** & **[System upgrades](System-upgrades)** – a bigger, better ship
 5. **[Captains](Captains)** & **[Fleet commands](Fleet-commands)** – a fleet that earns for you
 6. **[Story missions](Story-missions)** – the road to the galactic core
 
@@ -53,6 +53,7 @@ Or browse everything by system below.
 ## Progression & Systems
 
 - **[Ship generation](Ship-generation)** – how NPC ships and stations are procedurally built and scaled by distance from the core
+- **[Ship stats](Ship-stats)** – the Building Mode stat panel: what Mass, Pitch/Yaw/Roll and Processing Power mean and how to improve each
 - **[System upgrades](System-upgrades)** – the subsystem modules: turret control, boosters and permanent installation
 - **[Building knowledge](Building-knowledge)** – unlocking each ship-building material and bigger ships
 

@@ -205,5 +205,9 @@ When a number is too low, work down this list in order — the early levers are 
 
 - [Building knowledge](Building-knowledge) — materials, the Processing Power cap, and subsystem sockets
 - [System upgrades](System-upgrades) — the modules that push stats past what blocks give
+- [Ship generation](Ship-generation) — how the same stats are set for NPC ships and scaled by distance from the core
 - [Combat](Combat) and [Defensive systems](Defensive-systems) — how Hull, Shield and Fire Power play out in a fight
 - [Captains](Captains) — crew roles, morale and pay
+
+---
+*Progression & Systems: [Ship generation](Ship-generation) · [Ship stats](Ship-stats) · [System upgrades](System-upgrades) · [Building knowledge](Building-knowledge)*

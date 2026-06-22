@@ -47,6 +47,8 @@ means better prices, docking and repairs, and fewer ambushes.
   knowledge](Building-knowledge)** unlock — this is the backbone of progression.
 - Slot **[System upgrades](System-upgrades)** into your subsystem sockets for more turret slots, energy,
   cargo, speed and jump range.
+- Watch the **[Ship stats](Ship-stats)** panel as you build — it shows what Mass, speed, turning and
+  Processing Power your blocks are giving you, and how to improve each.
 - Improve survivability with **[Defensive systems](Defensive-systems)** (shields, point defence,
   resistances).
 - Want a specific weapon? Build it at a Turret Factory (**[Turret crafting](Turret-crafting)**) or gamble
