@@ -37,6 +37,7 @@ wiki/
 | `Story-missions.md` | Story missions | The main artifact/barrier questline and its boss steps |
 | `Events.md` | Events | Distress signals, ambushes, headhunters, roaming bosses, scheduling |
 | `Building-knowledge.md` | Building knowledge | Material unlock tiers, prices, sockets, how to acquire each |
+| `Ship-stats.md` | Ship stats | The Building Mode stat panel: what Mass, Pitch/Yaw/Roll, P.P. etc. mean and how each is improved |
 | `Ship-orders.md` | Ship orders | The fleet order types you assign to ships |
 | `Captains.md` | Captains | Captain tiers, levels, salary formula, ambush risk |
 | `Captain-classes.md` | Captain classes | The nine class specializations and their ship bonuses |

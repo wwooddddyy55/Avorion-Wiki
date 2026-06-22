@@ -27,6 +27,7 @@ Search the `pages/` folder for `Screenshot needed` to find them all.
 | File (`wiki/images/`) | Page | Where it goes | What to capture |
 |---|---|---|---|
 | `system-upgrades-socket-panel.png` | System upgrades | "How upgrades work" | The ship's subsystem socket panel with an upgrade's tooltip open, showing the three energy figures and the permanent-install preview. |
+| `ship-stats-panel.png` | Ship stats | Intro | The Building Mode ship stats panel on the right, with the configuration cog visible and a spread of stats (mass, velocity, pitch/yaw/roll, processing power) shown. |
 | `research-station-ui.png` | Research Station | "How it works / requirements" | The research window: the 3 required + 2 optional input slots and the single result slot, ideally mid-research. |
 | `trading-station-menu.png` | Trading and Prices | "The price formula" | A station's trade menu showing a good's buy/sell price, with the supply/demand indicator visible. |
 | `galaxy-map-regions.png` | Ship generation | "Distance from the core is the master dial" | The galaxy map zoomed out, showing the bright dense core vs. the sparse rim — to illustrate distance-based scaling. |

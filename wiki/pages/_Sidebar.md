@@ -32,6 +32,7 @@
 
 **Progression & Systems**
 - [Ship generation](Ship-generation)
+- [Ship stats](Ship-stats)
 - [System upgrades](System-upgrades)
 - [Building knowledge](Building-knowledge)
 
