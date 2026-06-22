@@ -219,4 +219,4 @@ quoting for the in-universe flavour:
 - [Special items](Special-items) – other activatable inventory items like the one Boss Caller
 
 ---
-*Items & Special Objects: [Reconstruction kits](Reconstruction-kits) · [Maps and charts](Maps-and-charts) · [Deployable beacons](Deployable-beacons) · [Special items](Special-items) · [Research Station](Research-Station)*
+*Items & Special Objects: [Reconstruction kits](Reconstruction-kits) · [Maps and charts](Maps-and-charts) · [Deployable beacons](Deployable-beacons) · [Special items](Special-items) · [Research Station](Research-Station) · [Boss callers](Boss-callers)*

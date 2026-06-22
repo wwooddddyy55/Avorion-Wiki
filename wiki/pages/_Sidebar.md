@@ -45,6 +45,7 @@
 - [Deployable beacons](Deployable-beacons)
 - [Special items](Special-items)
 - [Research Station](Research-Station)
+- [Boss callers](Boss-callers)
 
 **Factions & Diplomacy**
 - [Diplomacy and Reputation](Diplomacy-and-Reputation)

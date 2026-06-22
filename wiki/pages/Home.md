@@ -54,6 +54,7 @@ A player-facing wiki for **Avorion**, focused on game mechanics derived directly
 - **[Deployable beacons](Deployable-beacons)** – message beacons, sector renaming, and marker buoys
 - **[Special items](Special-items)** – the Recall Device home-jump, the Energy Suppressor, and bound mission chips
 - **[Research Station](Research-Station)** – reroll turrets, blueprints and system upgrades into new randomized gear, with rarity-bump odds, Auto-Research and hidden recipes
+- **[Boss callers](Boss-callers)** – Legendary consumables that summon a boss on demand: the Hyperspace Interrupter, the teleporting boss Fidget, and how to pin it down
 
 ## Factions & Diplomacy
 
