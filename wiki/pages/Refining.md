@@ -6,6 +6,11 @@ used to build ships and stations. Unlike [goods](Goods), ores and scrap **cannot
 must be refined first. Refining is done at a **Resource Depot**, or passively aboard a ship fitted with a
 refinery, for a small fee that scales with your relations.
 
+> **In short:** mining and salvaging fill your hold with **ore and scrap**, which is dead weight until you
+> **refine** it into materials at a **Resource Depot** (or passively, with an onboard refinery). The fee
+> **shrinks as your relations improve** and is **free at your own faction's** depot — so refine where
+> you're liked. Materials, not ore, are what you spend to build ships and stations.
+
 ## Overview
 
 Mining asteroids and salvaging wreckage fills your cargo bay with raw ore and scrap. These are dead weight
@@ -93,4 +98,4 @@ at hostile relations down to **1%** at maximum relations:
 - [Player stations](Player-stations) – building and operating your own stations
 
 ---
-*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods) · [Trade Contracts](Trade-Contracts)*
+*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods)*

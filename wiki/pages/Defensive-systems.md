@@ -8,6 +8,16 @@ Beyond armor and shield blocks, a ship's survivability is shaped by **upgrade sy
 slot into upgrade sockets) that boost shields, change how damage types apply, or fight off boarders. This
 page covers the defensive upgrades; for the damage they defend against, see **[Combat](Combat)**.
 
+> **In short — what to prioritize:**
+> 1. **Shield Booster** first — raw extra shield HP is the broadest survivability upgrade.
+> 2. **Point Defense / Anti-Fighter guns** if you face torpedoes or fighters (carriers, torpedo bosses).
+> 3. **Situational:** *Shield Impenetrator* when shield-piercers (Pulse Cannons, Sabot torpedoes) are
+>    eating you; *Shield Ionizer* for resistance to a known damage type; *IDWS* if you're being boarded.
+> 4. **Avoid the Hull Polarizer** unless you're sure you won't meet its weak damage type — the downside is
+>    crippling.
+>
+> Most of these reach **full strength only when permanently installed** — commit your best rolls.
+
 ## Permanent installation
 
 Many defensive systems give a small bonus when slotted normally and their **full** effect only when

@@ -8,6 +8,11 @@ This page covers how damage works in **Avorion**: the **damage types**, how they
 individual turret weapon types see **[Weapons](Weapons)**; for torpedoes see **[Torpedoes](Torpedoes)**;
 for shield and defensive ship upgrades see **[Defensive systems](Defensive-systems)**.
 
+> **In short:** enemies are protected by a **shield** (hit first) and then **hull**. Energy/Plasma strip
+> shields; Physical/Anti-Matter wreck hull; Electric does both. So **bring the right damage type for the
+> layer you're attacking**, and a mix to handle both. Beyond type, **tech level and rarity** are what make
+> one weapon hit far harder than another — chase higher-tech gear as you head coreward.
+
 ## Shields vs. hull
 
 Every armed ship has two health pools that are attacked in order:

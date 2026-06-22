@@ -11,6 +11,13 @@ numeric **relation level** (from −100,000 to +100,000) and a **status** — *W
 *Allies*. Together they decide whether a faction's stations will trade with you, dock you and repair you, or
 open fire on sight, and how good a price you get when they do (see [Trading and Prices](Trading-and-Prices)).
 
+> **In short:** keep relations **positive** with factions whose space you use — it earns better prices,
+> docking and repairs; let them slide negative and you get worse prices, then ambushes and bounty hunters.
+> Reputation is **per faction-pair**, so helping one rival doesn't help another. You **raise** it by trading
+> and completing their missions; you **lose** it fast by attacking their ships or being caught with
+> contraband. The **status** (War / Ceasefire / Neutral / Allies) can be steered directly from the Diplomacy
+> tab with tribute, ceasefires and alliances.
+
 Reputation is **per faction-pair**: improving your standing with one faction does nothing for your standing
 with its rivals, and the same applies to relations *between* two AI factions. This page explains the scale,
 what moves it up and down, how the statuses change, and how you can steer relations yourself from the
@@ -173,4 +180,4 @@ with it. There's no getting those relations back.
 - [Reconstruction kits](Reconstruction-kits) – the treaty that war with a faction cancels
 
 ---
-*Factions & Diplomacy: [Diplomacy and Reputation](Diplomacy-and-Reputation)*
+*Factions & Diplomacy: [Diplomacy and Reputation](Diplomacy-and-Reputation) — related: [Trading and Prices](Trading-and-Prices) · [Missions](Missions) · [Events](Events)*

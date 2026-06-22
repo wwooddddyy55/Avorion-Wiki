@@ -2,6 +2,22 @@
 
 A player-facing wiki for **Avorion**, focused on game mechanics derived directly from the game's scripts.
 
+> 🚀 **New to Avorion? Start with [Getting Started](Getting-Started)** — a guided walk through the game in
+> the order you'll actually meet it, linking every topic below.
+
+## Learning path
+
+If you're not sure where to begin, read these in order — each links onward into the detailed pages:
+
+1. **[Getting Started](Getting-Started)** – the whole journey in one page
+2. **[Combat](Combat)** & **[Weapons](Weapons)** – surviving your first fights
+3. **[Trading and Prices](Trading-and-Prices)**, **[Refining](Refining)** & **[Missions](Missions)** – your first credits
+4. **[Building knowledge](Building-knowledge)** & **[System upgrades](System-upgrades)** – a bigger, better ship
+5. **[Captains](Captains)** & **[Fleet commands](Fleet-commands)** – a fleet that earns for you
+6. **[Story missions](Story-missions)** – the road to the galactic core
+
+Or browse everything by system below.
+
 ## Economy & Trading
 
 - **[Trading and Prices](Trading-and-Prices)** – how station prices are calculated (supply/demand, relations, tax)
@@ -32,6 +48,7 @@ A player-facing wiki for **Avorion**, focused on game mechanics derived directly
 - **[Captain classes](Captain-classes)** – the nine specializations and the bonuses each grants
 - **[Captain perks](Captain-perks)** – all 21 perks, what they do, and which ones cancel out
 - **[Fleet commands](Fleet-commands)** – the background jobs captained ships run: mine, trade, scout, expedition…
+- **[Ship orders](Ship-orders)** – the immediate, in-sector orders you give any of your ships
 
 ## Progression & Systems
 
@@ -44,7 +61,6 @@ A player-facing wiki for **Avorion**, focused on game mechanics derived directly
 - **[Missions](Missions)** – how missions work, plus the repeatable side-mission catalog and rewards
 - **[Story missions](Story-missions)** – the main artifact-and-barrier questline to the galactic core
 - **[Events](Events)** – distress signals, ambushes, bounty hunters and roaming bosses
-- **[Ship orders](Ship-orders)** – the fleet commands you give captained ships
 - **[Encyclopedia](Encyclopedia)** – the game's built-in help book and its table of contents
 
 ## Items & Special Objects

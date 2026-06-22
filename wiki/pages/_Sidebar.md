@@ -1,5 +1,7 @@
 **[Home](Home)**
 
+**[🚀 Getting Started](Getting-Started)**
+
 **Economy & Trading**
 - [Trading and Prices](Trading-and-Prices)
 - [Goods](Goods)
@@ -26,6 +28,7 @@
 - [Captain classes](Captain-classes)
 - [Captain perks](Captain-perks)
 - [Fleet commands](Fleet-commands)
+- [Ship orders](Ship-orders)
 
 **Progression & Systems**
 - [Ship generation](Ship-generation)
@@ -36,7 +39,6 @@
 - [Missions](Missions)
 - [Story missions](Story-missions)
 - [Events](Events)
-- [Ship orders](Ship-orders)
 - [Encyclopedia](Encyclopedia)
 
 **Items & Special Objects**

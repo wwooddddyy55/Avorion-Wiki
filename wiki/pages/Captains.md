@@ -13,6 +13,12 @@ sectors. Captains have a **class** (their specialization), a **tier**, a **level
 > Captains drive the *self-running* commands. The short, in-sector commands you give any ship (jump,
 > attack, mine here, escort) are covered on **[Ship orders](Ship-orders)**.
 
+> **In short:** a captain lets a ship **work on its own in the background** — mining, trading, scouting —
+> even in other sectors. Their **class** decides what they're best at, their **perks** decide how fast,
+> safe and cheap they run commands, and **tier + level** scale all of it. Match the class to the job (a
+> Miner for mining, a Merchant for trade), favour captains with risk-lowering perks, and weigh their
+> **salary** against what they earn you.
+
 ## Tier
 
 Tier is the captain's overall pedigree, from **0 to 3**. It controls how many classes the captain has and

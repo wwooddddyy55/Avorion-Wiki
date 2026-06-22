@@ -11,6 +11,12 @@ ambush, and returns with the results — all while you're flying elsewhere, even
 **must have a captain** to run these, and the captain's **[class](Captain-classes)** and
 **[perks](Captain-perks)** decide how fast, safe, cheap and profitable each command is.
 
+> **In short:** give a captained ship a fleet command and it works **on its own for hours** — mining,
+> trading, scouting, expeditions — then returns with the haul, even from other sectors. **Match the command
+> to the captain's class** (a Miner mines fastest, a Merchant is required to trade), and turn on **Safe
+> Mode** when the cargo is worth more than the extra time. Every command carries an **ambush risk** that the
+> captain's perks raise or lower.
+
 Most commands share the same config knobs: a **Duration** slider, a **Safe Mode** toggle (slower but safer),
 **Immediate Delivery**, a **budget**, and a predicted **attack chance** and **yield**.
 

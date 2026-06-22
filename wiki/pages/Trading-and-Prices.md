@@ -7,6 +7,12 @@ balance of **supply and demand**, your **relations** with the station's faction,
 settings**. This page explains how those modifiers combine into a final price, how stations restock and consume
 goods, and how NPC trade ships move cargo around the galaxy.
 
+> **In short:** the same good is worth **different amounts in different sectors** because supply and demand
+> are local (±30%). Buy where it's abundant, sell where it's scarce — that gap is your profit. **Good
+> relations** earn you better prices (and a discount when buying); **hostile** relations make stations pay
+> you less and charge you more. A station's current stock level does **not** move its price — only the
+> regional supply/demand balance does.
+
 ## Overview
 
 Each station **buys** a set of goods and **sells** a set of goods. You sell cargo to a station at its **buy
@@ -36,6 +42,8 @@ whose policies explicitly allow them.
 | **Tax** | A fraction of the transaction paid to the station owner. Default **0%**. Owners of player stations can set this. |
 
 ## The price formula
+
+*[📷 Screenshot needed — ASSETS.md: images/trading-station-menu.png]*
 
 The final price of a single unit is:
 

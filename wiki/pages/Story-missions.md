@@ -64,4 +64,4 @@ upgrades, they have a use beyond the story.
 - [Building knowledge](Building-knowledge) – you'll need higher materials to survive the deeper sectors
 
 ---
-*Player Progression & Missions: [Missions](Missions) · [Story missions](Story-missions) · [Events](Events) · [Building knowledge](Building-knowledge) · [Ship orders](Ship-orders) · [Encyclopedia](Encyclopedia)*
+*Progression & Missions: [Missions](Missions) · [Story missions](Story-missions) · [Events](Events) · [Encyclopedia](Encyclopedia)*

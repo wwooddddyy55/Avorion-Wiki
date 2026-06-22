@@ -12,6 +12,11 @@ it reaches a gate). The *same* states power the [Ship orders](Ship-orders) and s
 [Fleet commands](Fleet-commands) you give your own captained ships, so understanding them tells you
 both how enemies behave and what your fleet is doing when you're not watching.
 
+> **In short:** NPCs aren't scripted set-pieces — they react. A peaceful patrol turns hostile if its
+> faction takes enough damage; workers flee when threatened; **persecutors** will chase you across several
+> jumps. Reading a ship's current behaviour tells you whether it's about to fight, flee or ignore you — and
+> the same states drive your own captained ships.
+
 This page covers the behaviour states themselves. For the named special enemies (teleporters,
 summoners, loot carriers) and how enemy waves are sized, see [Special enemies](Special-enemies); for
 the unique boss encounters see [World bosses](World-bosses).

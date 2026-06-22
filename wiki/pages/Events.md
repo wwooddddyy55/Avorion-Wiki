@@ -71,4 +71,4 @@ They are tougher than normal sector enemies and drop better loot:
 - [Combat](Combat) – damage types and how to actually win these fights
 
 ---
-*Player Progression & Missions: [Missions](Missions) · [Story missions](Story-missions) · [Events](Events) · [Building knowledge](Building-knowledge) · [Ship orders](Ship-orders) · [Encyclopedia](Encyclopedia)*
+*Progression & Missions: [Missions](Missions) · [Story missions](Story-missions) · [Events](Events) · [Encyclopedia](Encyclopedia)*

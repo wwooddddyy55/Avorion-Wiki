@@ -92,4 +92,4 @@ Co-op controls, **alliances** (members, alliance fleet, alliance vault), and **g
 - [Missions](Missions) – the guided tutorial missions that complement the Encyclopedia
 
 ---
-*Player Progression & Missions: [Missions](Missions) · [Story missions](Story-missions) · [Events](Events) · [Building knowledge](Building-knowledge) · [Ship orders](Ship-orders) · [Encyclopedia](Encyclopedia)*
+*Progression & Missions: [Missions](Missions) · [Story missions](Story-missions) · [Events](Events) · [Encyclopedia](Encyclopedia)*

@@ -7,6 +7,11 @@ stations for profit. Each good has a fixed **base price** and **volume**, and be
 moved between sectors by traders. For how prices are calculated at a station, see
 **[Trading and Prices](Trading-and-Prices)**.
 
+> **In short:** profit comes from **price differences between sectors**, not from a good's base price.
+> Buy where a good is in **oversupply** (cheap) and sell where it's in **demand** (dear). Higher-tier
+> goods carry more value per unit of cargo, but the **biggest lever is cargo capacity** — a bigger hold
+> means more profit per run. Raw ore and scrap are not traded here; they're [refined](Refining).
+
 ## Good attributes
 
 | Attribute | Meaning |
@@ -217,6 +222,18 @@ All 136 normally-tradeable goods.
 | Wood | 350 | 2.5 | 1 | 1 | Consumer | — |
 | Zinc | 250 | 1 | 0 | 3 | Basic | — |
 
+## Trading tips
+
+- **Early game:** you don't need to memorise the table — open the **Galaxy Map's trading view** to spot
+  where a good is cheap vs. dear, and run that gap. Low-tier basics (ores once refined, food, fuel) move
+  in bulk and are a safe first income.
+- **Value density matters:** when your hold is small, favour **high-price, low-volume** goods so each
+  cubic metre of cargo earns more. As your cargo grows, bulk low-value runs scale up too.
+- **Watch the flags:** **Illegal** contraband sells for a lot at smuggler-friendly stations but tanks
+  your relations if you're caught carrying or selling it openly. **Dangerous** goods are legal.
+- **Mid/late game:** the real money is owning the chain — feed your own [factories](Production) their
+  inputs and sell their outputs. See [Production](Production) and [Player stations](Player-stations).
+
 ## See also
 
 - [Trading and Prices](Trading-and-Prices) – how station prices are calculated
@@ -225,4 +242,4 @@ All 136 normally-tradeable goods.
 - [Consumer goods](Consumer-goods) – what each station type consumes
 
 ---
-*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods) · [Trade Contracts](Trade-Contracts)*
+*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods)*

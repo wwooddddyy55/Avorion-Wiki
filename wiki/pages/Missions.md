@@ -11,6 +11,11 @@ covers how missions work and lists the repeatable **side missions**. For the mai
 **[Story missions](Story-missions)**; for the unscripted things that happen to you in space see
 **[Events](Events)**.
 
+> **In short:** missions are repeatable income **and** the reliable way to grind **reputation** with a
+> faction. Pay scales as you move toward the **core**, so the same job is worth far more deeper in. Combat
+> clear-out jobs are the dependable reputation grind; deliveries and escorts pay credits with less risk.
+> Pick missions from the faction whose standing you want to raise.
+
 ## Where missions come from
 
 Most side missions are posted on the **bulletin board** of a station — military outposts, factions'
@@ -110,4 +115,4 @@ then get out of the way. They are ordinary missions under the hood (and can be s
 - [Ship orders](Ship-orders) – the fleet commands you give captained ships
 
 ---
-*Player Progression & Missions: [Missions](Missions) · [Story missions](Story-missions) · [Events](Events) · [Building knowledge](Building-knowledge) · [Ship orders](Ship-orders) · [Encyclopedia](Encyclopedia)*
+*Progression & Missions: [Missions](Missions) · [Story missions](Story-missions) · [Events](Events) · [Encyclopedia](Encyclopedia)*

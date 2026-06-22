@@ -11,7 +11,32 @@ stat** of the finished turret (fire rate, range, damage, and so on).
 This page lists the ingredients for every weapon type and which stat each one raises. For what the
 weapons themselves do, see **[Weapons](Weapons)**; for the goods, see **[Goods](Goods)**.
 
+> **In short:** building your own turret lets you **pour extra goods into the stat you care about**. Each
+> weapon's *investable* ingredients each pump one stat (damage, fire rate, range, or — on mining/salvaging
+> lasers — efficiency). Decide the turret's job first, then max the matching ingredient: **damage** for
+> burst/sniper guns, **fire rate** for sustained DPS and fighter defence, **range** for stand-off
+> weapons, **efficiency** for harvesters. See [What to invest in](#what-to-invest-in).
+
+## What to invest in
+
+You can't max everything — investable goods are capped per ingredient — so invest toward the turret's
+**role**:
+
+- **Damage** — best on slow, hard-hitting guns (Cannon, Railgun, Bolter) where each shot already lands
+  heavy; turns them into alpha-strike weapons.
+- **Fire rate** — best on fast guns (Chaingun, Laser) and on **point-defense**, where more shots per
+  second means more fighters and torpedoes swatted.
+- **Range** — lets a weapon open fire before the enemy can, valuable on snipers and on ships that kite.
+- **Efficiency** (mining & salvaging lasers) — the only stat that matters on harvesters: it directly
+  raises how much ore/material you extract, so always max it on a mining or salvaging build.
+
+Remember that **tech level and rarity** of the base turret set its raw power; crafting investment shifts
+*which way* that power leans. A well-invested mid-tech turret can out-perform a careless high-rarity one
+for its intended job.
+
 ## How crafting ingredients work
+
+*[📷 Screenshot needed — ASSETS.md: images/turret-factory-ui.png]*
 
 Each ingredient row has up to four numbers:
 
@@ -28,8 +53,7 @@ of the stat or a **flat** addition (noted below). Damage, range and fire-rate bo
 levers; mining/salvaging turrets instead invest into **efficiency**.
 
 > Ingredient lists are by **weapon type** and do not change with rarity, but the *cost* of a turret
-> scales with its tech level and rarity. A few rows scale their effect with rarity internally
-> (`rarityFactor`).
+> scales with its tech level and rarity. A few boosts also scale their effect with the turret's rarity.
 
 ## Armed weapons
 

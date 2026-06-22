@@ -7,6 +7,11 @@ consume goods for passive profit, and collect **tax** on trades made there. This
 and the settings that control how they trade. For the underlying price math see
 **[Trading and Prices](Trading-and-Prices)**.
 
+> **In short:** owning a station turns trade into **passive income** — even while you're away, it buys, sells,
+> consumes goods for profit, and collects **tax** on trades made there. The catch is **upkeep and stock**: a
+> factory stalls without its inputs, and a population station only profits while it's stocked with what its
+> people consume. Start with a simple producer or a well-stocked trading post in a busy sector.
+
 ## Overview
 
 Most stations can be founded by the player, including [factories](Production), trading posts, and population

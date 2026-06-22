@@ -9,14 +9,17 @@ Pages are derived from the game's own scripts so the numbers stay accurate.
 wiki/
 ├── pages/        GitHub-wiki Markdown pages (.md)
 ├── extraction/   Line-accurate technical facts extracted from the game code
-└── tools/        Python generators that build the data-heavy pages from source
+├── tools/        Python generators that build the data-heavy pages from source
+├── ASSETS.md     Screenshot/icon checklist: what to capture and where each goes
+└── images/       Image files referenced by pages as ![alt](images/<name>.png)
 ```
 
 ### pages/
 
 | File | Page | Covers |
 |---|---|---|
-| `Home.md` | Home | Wiki landing page / index |
+| `Home.md` | Home | Wiki landing page / index, learning path |
+| `Getting-Started.md` | Getting Started | New-player on-ramp: the whole progression in one page, linking every topic |
 | `_Sidebar.md` | (sidebar) | Navigation shown on every wiki page |
 | `Trading-and-Prices.md` | Trading and Prices | Price formula, supply/demand, relations, tax, stock, NPC traders |
 | `Goods.md` | Goods | Full commodity catalog, raw resources, contraband |
@@ -43,6 +46,27 @@ wiki/
 
 GitHub turns a filename like `Player-stations.md` into the page title **"Player stations"**, and links such as
 `[Player stations](Player-stations)` resolve to it. `Home.md` and `_Sidebar.md` are GitHub-wiki special pages.
+
+The table above is a partial index; the `pages/` folder holds more pages (captains, enemies, ship/​system
+generation, items, diplomacy, the mod pages, …). `Home.md` and `_Sidebar.md` are the authoritative, complete
+index — every page is listed in both, grouped by section.
+
+## Writing style (important)
+
+These pages teach **players how the game works**, not how the code works. Two rules keep them that way:
+
+1. **No code identifiers in reader-facing text.** Lua file names, function names, class/variable names and
+   `~line` citations belong **only** in the `<!-- ... -->` source comment at the very top of each page (which
+   is invisible when rendered on the wiki). In the body, use the in-game term instead — e.g. write
+   "Military Turret Control System", not `militarytcs.lua`; "+4 armed turret slots", not
+   `addMultiplyableBias(ArmedTurrets, 4)`. Keep the **data tables and the numbers** — players want those —
+   just strip the code framing around them, and lead dense formulas with a plain-language takeaway.
+2. **Open with a quick reference.** Most pages start with a `> **In short:** …` blockquote (or a lead "At a
+   glance" table) giving the 30-second version before the detail. Add concise, practical tips ("best starter
+   X", "use this against Y") grounded in the page's own numbers.
+
+When adding a page, also register it in **both** `Home.md` and `_Sidebar.md`, give it a "See also" list and
+the italic footer nav line for its section, and add any screenshots to `ASSETS.md` (see below).
 
 ## Publishing to a GitHub wiki
 

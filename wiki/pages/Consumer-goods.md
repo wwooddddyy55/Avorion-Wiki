@@ -7,6 +7,11 @@ goods, creating steady **demand** that raises local prices and gives traders a r
 Player-owned consumer stations turn this into passive income. For how that demand affects prices, see
 **[Trading and Prices](Trading-and-Prices)**.
 
+> **In short:** some station types (habitats, casinos, biotopes…) **use up** goods instead of reselling
+> them. Own one, keep it **stocked** with what it consumes, and its population pays you a **~10% markup**
+> every couple of minutes — steady passive income on top of normal trade. The tables below show which
+> goods each station type wants.
+
 ## How consumption works
 
 A consuming station buys its listed goods from passing traders and from you. Each consumer adds **demand**
@@ -159,4 +164,4 @@ Reverse lookup – which station types consume each good. Useful for finding a b
 - [Player stations](Player-stations) – building and operating your own stations
 
 ---
-*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods) · [Trade Contracts](Trade-Contracts)*
+*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods)*

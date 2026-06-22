@@ -38,8 +38,8 @@ the quantity transportable per flight, and the profit per unit.
 
 ## How routes are found
 
-The region scan (`factorymap.lua`) reads every factory, mine and consumer in the selected area and
-computes, for each good, the **cheapest sector to buy** (largest negative price deviation) and the
+The region scan reads every factory, mine and consumer in the selected area and computes, for each
+good, the **cheapest sector to buy** (largest negative price deviation) and the
 **most expensive sector to sell** (largest positive deviation). A route is viable only if buy and
 sell sectors differ in price, both are revealed and reachable, and neither is held by a faction
 you are **at war** with. Per-unit profit is:

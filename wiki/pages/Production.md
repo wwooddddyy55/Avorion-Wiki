@@ -7,6 +7,11 @@ income, and chaining factories that feed each other is the basis of an industria
 every production recipe in the game. For how the resulting goods are priced when traded, see
 **[Trading and Prices](Trading-and-Prices)**.
 
+> **In short:** a factory profits by **adding value** — it buys cheap inputs and sells dearer outputs.
+> The most reliable money comes from **chaining** factories so one's output feeds the next, and from
+> owning a factory in a sector that already **demands** its product. Mines and collectors need **no
+> inputs** at all, making them the simplest first factory. See [Picking a factory](#picking-a-factory).
+
 ## How factories work
 
 Each factory runs a fixed **recipe**: it consumes a set of **ingredients** and produces one or more
@@ -173,6 +178,20 @@ All 125 production recipes. Quantities are per production cycle.
 | Wood Farm | Farm | 3× Energy Cell *(opt.)*<br>75× Water | 6× Wood | 3× Oxygen | 4,075,000 |
 | Zinc Mine | Mine | — | 10× Zinc | — | 11,250,000 |
 
+## Picking a factory
+
+- **Simplest starters:** **Mines**, **Collectors** and **Solar Power Plants** take **no inputs**, so they
+  never stall waiting on supply — pure output you just collect and sell. A good first investment while
+  you learn the loop.
+- **Build a short chain:** pick two or three recipes where one's **output is the next's input** (e.g.
+  a metal → component → device line). Feeding your own factories cuts out the middleman and multiplies
+  the value you add.
+- **Site it where it's wanted:** found a factory in a region that already **demands** its product (and
+  has cheap **inputs** nearby). Local supply/demand sets the price — see [Trading and Prices](Trading-and-Prices).
+- **Mind the founding cost:** the *Build cost* column scales with how much value a recipe adds, so
+  high-value tech/military factories are expensive but lucrative; basic producers are cheap to start.
+- Stock and tax for player-owned factories are covered on [Player stations](Player-stations).
+
 ## See also
 
 - [Goods](Goods) – the commodities produced and consumed here
@@ -181,4 +200,4 @@ All 125 production recipes. Quantities are per production cycle.
 - [Consumer goods](Consumer-goods) – what population stations consume
 
 ---
-*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods) · [Trade Contracts](Trade-Contracts)*
+*Economy & Trading: [Goods](Goods) · [Trading and Prices](Trading-and-Prices) · [Production](Production) · [Refining](Refining) · [Player stations](Player-stations) · [Consumer goods](Consumer-goods)*

@@ -11,6 +11,11 @@ background spawners behind persecutors and the Behemoth event, and the shared ru
 "world boss". For the plain behaviour states all NPCs share see [Enemy AI](Enemy-AI); for the unique
 named bosses see [World bosses](World-bosses).
 
+> **In short:** enemies get **tougher and more numerous the closer you fly to the core**, and some carry
+> special gimmicks — teleporting blinkers, minion summoners, loot-carrying goons worth killing. Expect
+> bigger waves and hull/damage buffs deeper in, and bring point-defence and the right damage types rather
+> than out-levelling them by distance alone.
+
 ## Special enemy types
 
 | Enemy | Gimmick |

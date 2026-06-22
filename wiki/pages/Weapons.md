@@ -12,6 +12,12 @@ it fires, its base **[damage type](Combat#damage-types)**, and its typical range
 For how damage applies to shields and hull, see **[Combat](Combat)**. For building your own turrets, see
 **[Turret crafting](Turret-crafting)**.
 
+> **In short:** match the weapon to the target. **Against shields** use Energy/Plasma (Laser, Plasma Gun);
+> **against hull** use Physical/Anti-Matter (Cannon, Bolter, Railgun); **against fighters and torpedoes**
+> use Point Defense and Anti-Fighter guns; **all-rounders** are Electric (Tesla, Lightning). A weapon's
+> listed numbers are *generation ranges* — real damage comes from its tech and rarity. See
+> [Choosing a weapon](#choosing-a-weapon).
+
 ## Weapon attributes
 
 | Attribute | Meaning |
@@ -88,6 +94,29 @@ Several armed weapons can roll a **bonus damage type** when generated, changing 
 A bonus elemental roll adds a large multiplier against the relevant pool — Anti-Matter against hull,
 Plasma against shields — so an elemental-rolled weapon of the same DPS is markedly better against the
 right target. See [Damage types](Combat#damage-types).
+
+## Choosing a weapon
+
+There's no single best turret — pick by **what you're shooting** and **how you fly**:
+
+- **Strip shields fast:** **Plasma Gun** (huge shield bonus) or **Laser** (steady, accurate Energy). Open
+  with these, then switch to a hull weapon once shields drop.
+- **Tear through hull:** **Bolter** (always Anti-Matter) and **Cannon** (slow, hard, splash). **Railgun**
+  adds block penetration to hit deep, lined-up blocks — great against big ships.
+- **One weapon for everything:** **Tesla** / **Lightning Gun** (Electric) hit shields and hull equally —
+  flexible when you don't want to swap loadouts. Lightning reaches far; Tesla is short-range.
+- **Shoot past shields:** **Pulse Cannon** penetrates shields to hit hull directly (at −25% base damage).
+- **Kill fighters & torpedoes:** equip **Point Defense** (Cannon or Laser) and **Anti-Fighter** guns —
+  they auto-target small fast threats your main guns can't track. Essential against carriers and torpedo
+  bosses (see [Defensive systems](Defensive-systems)).
+- **Beginner-friendly:** beams (Laser, Tesla) hit instantly and never need leading, so they're the easiest
+  to land while you learn; slow projectiles (Cannon, Rocket) hit hard but must be aimed ahead of a moving
+  target.
+- **Mining vs combat:** mining and salvaging are done with the **unarmed** lasers above — keep a dedicated
+  mining turret or ship rather than expecting combat guns to harvest.
+
+Whatever the type, **higher tech level and rarity** matter more for raw damage than the type itself — see
+[How weapon power scales](Combat#how-weapon-power-scales).
 
 ## See also
 
