@@ -207,6 +207,7 @@ When a number is too low, work down this list in order — the early levers are 
 - [System upgrades](System-upgrades) — the modules that push stats past what blocks give
 - [Ship generation](Ship-generation) — how the same stats are set for NPC ships and scaled by distance from the core
 - [Combat](Combat) and [Defensive systems](Defensive-systems) — how Hull, Shield and Fire Power play out in a fight
+- [Fighters](Fighters) — what fills Hangar Space, and how Production Capacity rebuilds lost fighters
 - [Captains](Captains) — crew roles, morale and pay
 
 ---

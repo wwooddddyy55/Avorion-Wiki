@@ -261,4 +261,4 @@ levers; mining/salvaging turrets instead invest into **efficiency**.
 - [Production](Production) – factories that produce those goods
 
 ---
-*Combat & Weapons: [Combat](Combat) · [Weapons](Weapons) · [Turret crafting](Turret-crafting) · [Torpedoes](Torpedoes) · [Defensive systems](Defensive-systems)*
+*Combat & Weapons: [Combat](Combat) · [Weapons](Weapons) · [Turret crafting](Turret-crafting) · [Torpedoes](Torpedoes) · [Defensive systems](Defensive-systems) · [Fighters](Fighters)*

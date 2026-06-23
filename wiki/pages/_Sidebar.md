@@ -17,6 +17,7 @@
 - [Turret crafting](Turret-crafting)
 - [Torpedoes](Torpedoes)
 - [Defensive systems](Defensive-systems)
+- [Fighters](Fighters)
 
 **Enemies & Bosses**
 - [Enemy AI](Enemy-AI)

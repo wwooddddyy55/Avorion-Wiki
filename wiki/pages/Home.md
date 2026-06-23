@@ -35,6 +35,7 @@ Or browse everything by system below.
 - **[Turret crafting](Turret-crafting)** – building turrets at a Turret Factory and the stat each ingredient raises
 - **[Torpedoes](Torpedoes)** – torpedo bodies, warheads and damage profiles
 - **[Defensive systems](Defensive-systems)** – shields, resistances, weaknesses and point defense
+- **[Fighters](Fighters)** – carrier fighters: stats, building them at a Fighter Factory, squads and best uses
 
 ## Enemies & Bosses
 
