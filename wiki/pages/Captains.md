@@ -93,6 +93,7 @@ The strength of any attackers can likewise be tuned by neutral perks (*Cunning*,
 - **[Fleet commands](Fleet-commands)** – the background commands captains run
 - **[Ship orders](Ship-orders)** – the immediate, in-sector orders for any ship
 - **[Trade Contracts](Trade-Contracts)** – automated trade routes flown by a Merchant captain
+- **[Rift Expeditions](Rift-Expeditions)** – where a Scientist captain's bonus matters most: triple Rift Research Data per kill
 
 ---
 *Fleet & Captains: [Captains](Captains) · [Captain classes](Captain-classes) · [Captain perks](Captain-perks) · [Fleet commands](Fleet-commands) · [Ship orders](Ship-orders)*

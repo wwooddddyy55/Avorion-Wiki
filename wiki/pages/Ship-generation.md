@@ -139,6 +139,7 @@ that keep a populated sector feeling alive are attached.
 
 ## See also
 
+- [World and Sector Generation](World-and-Sector-Generation) – how the galaxy decides what sector type you're even in before any of this scaling applies
 - [System upgrades](System-upgrades) – the subsystem modules generated craft and players slot in
 - [Building knowledge](Building-knowledge) – materials, block durability and size that feed these curves
 - [Combat](Combat) – how the generated HP, turret and tech scaling translate into difficulty

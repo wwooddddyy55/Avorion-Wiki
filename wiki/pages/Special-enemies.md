@@ -96,6 +96,7 @@ share a recognisable rule set:
 
 - [Enemy AI](Enemy-AI) – the behaviour states all NPCs run, and the persecutor mechanic in full
 - [World bosses](World-bosses) – the catalog of unique named bosses built on the template above
+- [Rift Expeditions](Rift-Expeditions) – the DLC dungeon runs where elite Xsotan variants show up in escalating waves
 - [Combat](Combat) – damage types, resistances and weaknesses these enemies roll
 - [Events](Events) – the roaming bosses and ambushes that drop these enemies into your lap
 - [Weapons](Weapons) / [Torpedoes](Torpedoes) – what the loot you pull off them actually does

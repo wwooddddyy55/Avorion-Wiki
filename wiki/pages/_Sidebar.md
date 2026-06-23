@@ -23,6 +23,7 @@
 - [Enemy AI](Enemy-AI)
 - [Special enemies](Special-enemies)
 - [World bosses](World-bosses)
+- [Rift Expeditions](Rift-Expeditions)
 
 **Fleet & Captains**
 - [Captains](Captains)
@@ -33,6 +34,7 @@
 
 **Progression & Systems**
 - [Ship generation](Ship-generation)
+- [World and Sector Generation](World-and-Sector-Generation)
 - [Ship stats](Ship-stats)
 - [System upgrades](System-upgrades)
 - [Building knowledge](Building-knowledge)

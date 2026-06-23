@@ -58,6 +58,7 @@ with the beacon the boss leaves behind.
 
 - [Special enemies](Special-enemies) – the shared world-boss rules, plus summoners, blinkers and loot goons
 - [Enemy AI](Enemy-AI) – the behaviour states the bosses and their minions run
+- [Rift Expeditions](Rift-Expeditions) – the DLC's own unique boss, the Xsotan Rift Guardian, guarding the way out of a rift
 - [Events](Events) – the *other* roaming bosses (Big AI, Guardian, asteroid/laser/shield bosses)
 - [Combat](Combat) / [Defensive systems](Defensive-systems) – damage types, point defence and surviving torpedo spam
 - [Weapons](Weapons) / [Torpedoes](Torpedoes) – what the Legendary drops actually do

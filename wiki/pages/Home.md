@@ -42,6 +42,7 @@ Or browse everything by system below.
 - **[Enemy AI](Enemy-AI)** – the autonomous behaviour states NPCs run, and the persecutors that hunt you
 - **[Special enemies](Special-enemies)** – teleporters, summoners, loot carriers, and how enemy waves scale toward the core
 - **[World bosses](World-bosses)** – the unique named boss encounters and their guaranteed Legendary drops
+- **[Rift Expeditions](Rift-Expeditions)** – the paid DLC's timed dungeon runs: entry constraints, environmental hazards, the escape methods, and the Rift Research Data economy
 
 ## Fleet & Captains
 
@@ -54,6 +55,7 @@ Or browse everything by system below.
 ## Progression & Systems
 
 - **[Ship generation](Ship-generation)** – how NPC ships and stations are procedurally built and scaled by distance from the core
+- **[World and Sector Generation](World-and-Sector-Generation)** – how the galaxy decides what's in each sector: the Barrier, Rifts, the 34 sector types, gates, and the background events that keep it alive
 - **[Ship stats](Ship-stats)** – the Building Mode stat panel: what Mass, Pitch/Yaw/Roll and Processing Power mean and how to improve each
 - **[System upgrades](System-upgrades)** – the subsystem modules: turret control, boosters and permanent installation
 - **[Building knowledge](Building-knowledge)** – unlocking each ship-building material and bigger ships
@@ -83,4 +85,3 @@ Or browse everything by system below.
 - **[XSF: Arms Generator](XSF-Arms-Generator)** – the Xavorion suite's procedural turret-stat engine: barrel, material, rarity and tech scaling, with the exact damage, cooling and pricing formulas
 - **[Xavorion: Weaponry](Xavorion-Weaponry)** – the weapon overhaul built on it: every weapon archetype (M1–M8), plus the fighter-squad, shield-booster and weapon-sound systems
 
-*More sections (ships, world generation, …) to follow.*
