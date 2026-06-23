@@ -59,3 +59,4 @@
 **Mods**
 - [XSF: Arms Generator](XSF-Arms-Generator)
 - [Xavorion: Weaponry](Xavorion-Weaponry)
+- [Xavorion: Mining](Xavorion-Mining)

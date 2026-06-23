@@ -84,4 +84,5 @@ Or browse everything by system below.
 
 - **[XSF: Arms Generator](XSF-Arms-Generator)** – the Xavorion suite's procedural turret-stat engine: barrel, material, rarity and tech scaling, with the exact damage, cooling and pricing formulas
 - **[Xavorion: Weaponry](Xavorion-Weaponry)** – the weapon overhaul built on it: every weapon archetype (M1–M8), plus the fighter-squad, shield-booster and weapon-sound systems
+- **[Xavorion: Mining](Xavorion-Mining)** – mining/salvaging turret rebalance, off-screen harvest simulation, and the Mine/Salvage fleet command overrides
 

@@ -183,4 +183,4 @@ a high-tech turret is the expensive one even at low rarity. The span between bas
 - [Turret crafting](Turret-crafting) – building turrets and the stat each ingredient raises
 
 ---
-*Mods: [XSF: Arms Generator](XSF-Arms-Generator) · [Xavorion: Weaponry](Xavorion-Weaponry)*
+*Mods: [XSF: Arms Generator](XSF-Arms-Generator) · [Xavorion: Weaponry](Xavorion-Weaponry) · [Xavorion: Mining](Xavorion-Mining)*

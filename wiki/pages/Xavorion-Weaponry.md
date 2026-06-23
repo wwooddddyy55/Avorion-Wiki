@@ -295,4 +295,4 @@ shooting, and from how far, by ear.
 - [Defensive systems](Defensive-systems) – shields and point defense on the receiving end
 
 ---
-*Mods: [XSF: Arms Generator](XSF-Arms-Generator) · [Xavorion: Weaponry](Xavorion-Weaponry)*
+*Mods: [XSF: Arms Generator](XSF-Arms-Generator) · [Xavorion: Weaponry](Xavorion-Weaponry) · [Xavorion: Mining](Xavorion-Mining)*
