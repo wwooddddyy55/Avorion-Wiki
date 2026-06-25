@@ -159,8 +159,8 @@ encounter.
 
 ## The Behemoth: buffed engagement window, Xavorion-aware loadout
 
-The galaxy-wide **Behemoth** world-boss event ([see World and Sector Generation](World-and-Sector-Generation#background-systems-that-keep-the-galaxy-alive)
-for the vanilla version) keeps running under this mod, with two concrete changes:
+The galaxy-wide **Behemoth** world-boss event ([see Behemoth](Behemoth) for the vanilla version) keeps
+running under this mod, with two concrete changes:
 
 - **The kill window is quadrupled.** Vanilla gives you **20 minutes** to find and fight the Behemoth before
   it moves on; this mod's override changes the underlying countdown to **120 minutes (2 hours)** — the
@@ -212,7 +212,7 @@ since folding it into the overhaul "would require a separate [rebalance]."
 
 - [Enemy AI](Enemy-AI) – the vanilla NPC behaviour states (Patrol, Evade, Persecutor) this mod partially disables
 - [Special enemies](Special-enemies) – wave scaling, world bosses, and the vanilla Persecutor/Behemoth spawners this mod overrides
-- [World and Sector Generation](World-and-Sector-Generation#background-systems-that-keep-the-galaxy-alive) – the vanilla Behemoth timing this mod extends
+- [Behemoth](Behemoth) – the vanilla Behemoth event this mod extends (engagement window, loot, signature upgrades)
 - [Missions](Missions) – the vanilla repeatable mission catalog this mod's Bounty Hunt/Clear Pirate Sector/etc. sit alongside
 - [Diplomacy and Reputation](Diplomacy-and-Reputation) – relation status and the War state Faction War would have driven, had it been enabled
 - [Xavorion: Weaponry](Xavorion-Weaponry) – the sibling mod whose named capstone weapons the Behemoth borrows when both mods are active

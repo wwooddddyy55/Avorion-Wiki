@@ -23,6 +23,7 @@
 - [Enemy AI](Enemy-AI)
 - [Special enemies](Special-enemies)
 - [World bosses](World-bosses)
+- [Behemoth](Behemoth)
 - [Rift Expeditions](Rift-Expeditions)
 
 **Fleet & Captains**

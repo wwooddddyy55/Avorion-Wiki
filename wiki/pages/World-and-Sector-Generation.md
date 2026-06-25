@@ -201,12 +201,9 @@ actually in:
   with a galaxy-wide chat announcement either way.
 - **The Wormhole Guardian** has its own galaxy-wide respawn countdown; expiry is announced with a "strong
   subspace disturbances" warning broadcast.
-- **The Behemoth.** A single roaming world-boss event, separate from the named [World bosses](World-bosses).
-  After **2 hours** of total server runtime, a **1-hour** countdown begins; on expiry the game picks an
-  AI-faction sector with stations but **no player presence**, in a band 180–500 sectors out, cycling
-  through four compass quadrants (Behemoth of the North / East / South / West) one at a time. Players get a
-  **20-minute** window to engage before it moves on; if nobody shows up, it visibly wrecks the sector's
-  stations into wreckage before the next 2-hour cycle begins in the next quadrant.
+- **The Behemoth.** A single roaming world-boss event, separate from the named [World bosses](World-bosses),
+  that cycles through four compass quadrants hunting for an empty AI sector to wreck. See
+  [Behemoth](Behemoth) for the full timer, loot table and its four exclusive Legendary upgrades.
 - **Faction takeovers carry a grudge.** If a sector's controlling faction changes from an AI faction to
   someone else, the old owner's relations toward the new controller worsen — **−30,000** if it was their
   core territory, **−10,000** on the fringe — announced to the new owner directly.

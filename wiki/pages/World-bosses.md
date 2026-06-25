@@ -64,4 +64,4 @@ with the beacon the boss leaves behind.
 - [Weapons](Weapons) / [Torpedoes](Torpedoes) – what the Legendary drops actually do
 
 ---
-*Enemies & Bosses: [Enemy AI](Enemy-AI) · [Special enemies](Special-enemies) · [World bosses](World-bosses)*
+*Enemies & Bosses: [Enemy AI](Enemy-AI) · [Special enemies](Special-enemies) · [World bosses](World-bosses) · [Behemoth](Behemoth) · [Rift Expeditions](Rift-Expeditions)*

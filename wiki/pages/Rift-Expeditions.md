@@ -209,4 +209,4 @@ to Legendary gear.
 - [Goods](Goods) – the wider trading-good catalog Rift Research Data and Rift Crystals belong to
 
 ---
-*Enemies & Bosses: [Enemy AI](Enemy-AI) · [Special enemies](Special-enemies) · [World bosses](World-bosses) · Rift Expeditions*
+*Enemies & Bosses: [Enemy AI](Enemy-AI) · [Special enemies](Special-enemies) · [World bosses](World-bosses) · [Behemoth](Behemoth) · Rift Expeditions*

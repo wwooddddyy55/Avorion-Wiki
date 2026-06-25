@@ -62,7 +62,7 @@ They are tougher than normal sector enemies and drop better loot:
 - **Travelling Merchant** — not a fight: a roaming trader that shows up to buy and sell.
 - **The Behemoth** — a galaxy-wide event distinct from the above: it roams between compass quadrants
   looking for an empty AI sector to wreck, giving players a limited window to fight it first. See
-  [World and Sector Generation → Background systems](World-and-Sector-Generation#background-systems-that-keep-the-galaxy-alive).
+  [Behemoth](Behemoth).
 
 > Some boss fights have a **mechanic** rather than being a pure slugfest — for example shooting the
 > special **asteroids** that power a boss's shield or weapon before you can damage the boss itself.

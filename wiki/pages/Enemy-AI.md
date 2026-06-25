@@ -102,4 +102,4 @@ How persecutor ships are actually *spawned* (their composition and cadence) is c
 - [Combat](Combat) – damage types and how to win the fights these behaviours start
 
 ---
-*Enemies & Bosses: [Enemy AI](Enemy-AI) · [Special enemies](Special-enemies) · [World bosses](World-bosses)*
+*Enemies & Bosses: [Enemy AI](Enemy-AI) · [Special enemies](Special-enemies) · [World bosses](World-bosses) · [Behemoth](Behemoth) · [Rift Expeditions](Rift-Expeditions)*

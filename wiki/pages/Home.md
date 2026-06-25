@@ -42,6 +42,7 @@ Or browse everything by system below.
 - **[Enemy AI](Enemy-AI)** – the autonomous behaviour states NPCs run, and the persecutors that hunt you
 - **[Special enemies](Special-enemies)** – teleporters, summoners, loot carriers, and how enemy waves scale toward the core
 - **[World bosses](World-bosses)** – the unique named boss encounters and their guaranteed Legendary drops
+- **[Behemoth](Behemoth)** – the galaxy-wide roaming boss event, its four directional variants, and their exclusive Legendary upgrades
 - **[Rift Expeditions](Rift-Expeditions)** – the paid DLC's timed dungeon runs: entry constraints, environmental hazards, the escape methods, and the Rift Research Data economy
 
 ## Fleet & Captains

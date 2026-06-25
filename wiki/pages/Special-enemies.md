@@ -75,7 +75,7 @@ Two background scripts spawn special threats into a sector directly:
   (Behemoth of the North / East / South / West), each a unique hand-built ship guarding a huge cache of
   loot, including a **unique Legendary system upgrade** per variant. It's extremely dangerous, and if it
   spawns in a sector with no players to defend it, it **flattens the place into wreckage** before
-  leaving.
+  leaving. See [Behemoth](Behemoth) for the full breakdown.
 
 ## What makes a "world boss"
 
@@ -102,4 +102,4 @@ share a recognisable rule set:
 - [Weapons](Weapons) / [Torpedoes](Torpedoes) – what the loot you pull off them actually does
 
 ---
-*Enemies & Bosses: [Enemy AI](Enemy-AI) · [Special enemies](Special-enemies) · [World bosses](World-bosses)*
+*Enemies & Bosses: [Enemy AI](Enemy-AI) · [Special enemies](Special-enemies) · [World bosses](World-bosses) · [Behemoth](Behemoth) · [Rift Expeditions](Rift-Expeditions)*
