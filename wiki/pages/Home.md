@@ -85,4 +85,7 @@ Or browse everything by system below.
 - **[XSF: Arms Generator](XSF-Arms-Generator)** – the Xavorion suite's procedural turret-stat engine: barrel, material, rarity and tech scaling, with the exact damage, cooling and pricing formulas
 - **[Xavorion: Weaponry](Xavorion-Weaponry)** – the weapon overhaul built on it: every weapon archetype (M1–M8), plus the fighter-squad, shield-booster and weapon-sound systems
 - **[Xavorion: Mining](Xavorion-Mining)** – mining/salvaging turret rebalance, off-screen harvest simulation, and the Mine/Salvage fleet command overrides
+- **[Xavorion: Class System](Xavorion-Class-System)** – the M1–M8 ship-size classes, the Building Mode stat panel, and new flight/Overcharge/Gyro Array system upgrades
+- **[Xavorion: Encounters](Xavorion-Encounters)** – the role-based fleet generator behind pirate squads, fleets and brigades, plus the persecutor/headhunter/faction-war systems it disables and the Behemoth tweaks it adds
+- **[Xavorion: Combat AI](Xavorion-Combat-AI)** – the ShipXAI state machine that controls engagement range and target commitment once a ship attacks, plus the lock-on/targeting-assist HUD
 

@@ -60,3 +60,6 @@
 - [XSF: Arms Generator](XSF-Arms-Generator)
 - [Xavorion: Weaponry](Xavorion-Weaponry)
 - [Xavorion: Mining](Xavorion-Mining)
+- [Xavorion: Class System](Xavorion-Class-System)
+- [Xavorion: Encounters](Xavorion-Encounters)
+- [Xavorion: Combat AI](Xavorion-Combat-AI)
