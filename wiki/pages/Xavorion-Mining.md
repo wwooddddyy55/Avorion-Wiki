@@ -19,6 +19,13 @@
      Galaxy:keepOrGetSector keep-alive, checkIfAbleToHarvest, updateHarvesting cargo-space gating);
      player/background/simulation/{minecommand,salvagecommand}.lua (calculateGatheredResources overrides:
      Mine refined/raw ×6.0; Salvage refined/raw ÷10, credits = resourcesPerWreckage × costFactor × 0.075);
+     vanilla data/scripts/player/background/simulation/minecommand.lua getMiningProperties
+     (refinedEfficiency = sum(stoneRefinedEfficiency × dps) / sum(dps) DPS-weighted avg; materialDps =
+     sum(dps × stoneDamageMultiplier × materialFactor); no energy or crew/manning check on turrets;
+     fighters counted if pilotWorkforce > 0); calculatePrediction (resourcesPerAsteroid 3850, timeToFly
+     25s / timeToFindField 120s base, asteroidsPerField 20 base, captainBonus 0.25 Miner class,
+     hourlyBonus 0.005/h, captainCut 0.1, simultaneousAsteroids 1+floor(fighters/6) cap 13,
+     sector weights nonFaction 1.0 / outerFaction 0.5 / centralFaction 0.15);
      Config/GalaxyModule.lua (FighterMineDamageMult/FighterMineEffMult). Image assets: see wiki/ASSETS.md. -->
 # Xavorion: Mining
 
@@ -115,6 +122,30 @@ rolls a small (**5%**) chance to hand you a bonus item — **30%** of those roll
 rest a turret, both generated at the sector's tier. Mining doesn't carry this bonus; only an unsupervised
 **salvager** can hand you free gear while you're not watching.
 
+### What the simulation checks (and doesn't)
+
+Before a turret contributes to the simulation, it must pass a **crew check** — an unmanned turret is
+skipped entirely and contributes nothing, as if it weren't installed. Ship **energy is not checked at
+all**; the simulation reads turret stats directly regardless of whether the reactor can power them in live
+play.
+
+When tallying turrets of a given type, **damage is additive** — each manned turret's output is summed.
+**Efficiency is the minimum** across all turrets of that type: nine Exotic Mining Refiners alongside one
+Common one means every Refiner on the ship is evaluated at Common efficiency. One low-rarity turret drags
+the entire batch down to its level. Keep all turrets of a given type at the same rarity to avoid this.
+
+### Rocket Ore Refiner Launchers in simulation
+
+The simulation applies a **×5 damage multiplier** to any turret with a non-zero explosion radius. Ore
+Refiner Launchers (the medium-barrel / rocket variant) have an explosion radius; beam Refiners do not.
+Combined with their higher per-shot damage, this gives rocket Ore Refiner Launchers roughly **6× the
+simulated mining output** of an equivalent beam Refiner at the same material and rarity — making them
+the best turret type for dedicated in-sector unsupervised mining ships.
+
+The opposite applies to salvage: **Scrap Refiner Launchers receive a ×0.33 damage penalty** in the
+simulation, making rocket Salvaging Refiners strictly worse than their beam equivalents for unsupervised
+salvage work. Use beam Salvaging Refiners on any ship left to work wrecks unsupervised.
+
 ## Mine and Salvage fleet commands
 
 The captain-driven, long-running **[Mine](Fleet-commands#mine)** and **[Salvage](Fleet-commands#salvage)**
@@ -127,6 +158,97 @@ estimates in opposite directions:
   would otherwise be, but the command adds a **credits payout** instead, worth roughly **7.5%** of the
   wreckage's estimated material value. A Salvage run trades resource quantity for a smaller, steadier
   credit income.
+
+These are a completely separate code path from the in-sector [HarvestSim](#working-while-youre-away) —
+they use vanilla's fleet command property system, and many of the rules that apply to unsupervised mining
+are reversed or simply absent here.
+
+### How Mine yield is calculated
+
+The fleet command reads two numbers from your ship's turrets for each material tier:
+
+- **refinedEfficiency** — a DPS-weighted average of each Mining Refiner's Efficiency stat. The Efficiency
+  stat comes from the material tier table and is **identical for every barrel variant** of the same
+  material and rarity. Heavy barrel, rocket launcher, burst, and gatling all write the same value —
+  barrel type cannot change this number.
+- **Total mining DPS** — the sum of all mining turret DPS weighted by stone damage multiplier. This
+  controls how quickly each asteroid is cleared.
+
+Yield per asteroid is fixed: **refinedEfficiency × Refiner-DPS-share × 3,850 (average asteroid yield) ×
+6**. DPS has no effect on the per-asteroid amount — it only determines how many asteroids fit inside the
+command duration. A faster ship mines more asteroids per hour at the same yield each.
+
+**Energy and crew are both irrelevant to the fleet command.** Every installed turret's stats are counted
+regardless of whether the ship has power to run them or crew to man them. This is the opposite of the
+in-sector HarvestSim, which requires crew and ignores energy in the same way.
+
+### Barrel type for fleet commands
+
+Since barrel type affects DPS but not Efficiency, the optimal barrel for fleet commands is whichever
+delivers the highest DPS per turret:
+
+| Barrel | Relative DPS | Fleet command priority |
+|---|---|---|
+| **Heavy** (single barrel) | **~5×** base | **Best** — mines asteroids fastest |
+| Gatling (quad barrel) | ~2.5× base | Good |
+| Burst (triple barrel) | ~1.78× base | Average |
+| Medium / Rocket Launcher | Lower than Heavy | **Worst** — use for in-sector work instead |
+
+Rocket Ore Refiner Launchers have ×20 per-shot damage but an extreme duty cycle (shooting window 1/6 as
+long, reload 8× longer), leaving their actual DPS well below a Heavy barrel. The ×5 simulation bonus
+that makes them dominant for in-sector unsupervised mining **does not apply to the fleet command** — the
+fleet command uses raw turret DPS, not HarvestSim. Use **Heavy barrel Mining Refiners** on any ship
+running the Mine fleet command.
+
+### Captain bonuses
+
+The **Miner** captain class is the single biggest lever on Mine command output:
+
+- **+25% to all gathered resources**
+- **+30 asteroids found per field** — more targets per search, less dead travel time between fields
+- **Extended maximum command duration** — scales with captain tier and level
+
+Beyond class, perks shape how quickly the captain locates asteroid fields: Navigator and Reckless reduce
+search time; Careful, Disoriented, and Addict increase it. A **10% cut of all resources** goes to the
+captain regardless of class or perks. The Gambler perk applies a final random multiplier that can swing
+yield either way.
+
+### Area efficiency
+
+Where you send the command matters as much as what's on the ship. The simulation weights sectors by type:
+
+| Sector type | Efficiency weight |
+|---|---|
+| No-Man's Space | 1.0 (full) |
+| Outer Faction Area | 0.5× |
+| Central Faction Area | 0.15× |
+
+Mining in no-man's space yields more than six times what the same ship earns in a faction core, purely
+from this weighting. Scouting the area first also helps directly: each discovered asteroid field reduces
+the time spent searching and increases how many asteroids the ship finds per visit.
+
+### Mining Subsystem upgrade
+
+A **Mining Subsystem** upgrade installed on the ship pushes area efficiency toward 100% based on its
+rarity. It is most valuable in resource-sparse or heavily factioned areas where baseline efficiency is
+low — it narrows the gap between your area and full efficiency rather than applying a flat multiplier.
+A high-rarity Mining Subsystem is the largest single non-turret improvement available to a fleet mining
+ship.
+
+### DPS ceiling
+
+Past a point, more turret DPS stops mattering. The prediction tracks a **Damage Efficiency** value
+shown in the Mine command UI: when this approaches 100%, the ship is flying-limited — more time is spent
+traveling between asteroids than actually mining them. At that point, heavier barrels or additional
+turrets gain almost nothing. The Miner captain's +30 asteroids-per-field bonus directly reduces this
+pressure by keeping more targets within easy reach.
+
+### Fighters in fleet commands
+
+Every **6 mining fighters** with pilot crew lets the ship mine one additional asteroid simultaneously,
+capped at **13 simultaneous**. This cuts effective travel overhead — instead of flying to each target
+in sequence, the ship works multiple rocks at once. Fighters need pilot crew assigned to the ship to
+activate; without pilots they are not counted.
 
 ## See also
 
