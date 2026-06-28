@@ -2,7 +2,7 @@
 
 ## Overview
 
-A total of **36 mod subfolders** under `Avorion/Avorion Mods/` were scanned, of which **10 were excluded** (9 ship/turret/plan blueprint folders containing only `.xml`/`.png` design data, and 1 pure-SFX sound swap with no scripts). The remaining **26 gameplay-altering mods** — spanning the LM13 "Xavorion / XSF" overhaul suite, modding frameworks, standalone server-side tweaks, and client-side UI/QoL tools — are mapped below with verbatim developer descriptions and per-mod script-hook analysis.
+A total of **38 mod subfolders** under `Avorion/Mods/` were scanned, of which **10 were excluded** (9 ship/turret/plan blueprint folders containing only `.xml`/`.png` design data, and 1 pure-SFX sound swap with no scripts). The remaining **29 gameplay-altering mods** — spanning the LM13 "Xavorion / XSF" overhaul suite, modding frameworks, standalone server-side tweaks, client-side UI/QoL tools, and fleet management utilities — are mapped below with verbatim developer descriptions and per-mod script-hook analysis.
 
 > **Path convention:** All script paths are relative to each mod's own folder root (`Avorion Mods/<ID>/`). All metadata is extracted directly from each folder's `modinfo.lua`.
 
@@ -57,6 +57,9 @@ A total of **36 mod subfolders** under `Avorion/Avorion Mods/` were scanned, of 
 | `1751636748` | Detailed Turret Tooltips | lyravega, MrMors, MassCraxx, Mp70 | UI / QoL | Adds hull-DPS and shield-DPS-per-slot detail to turret tooltips |
 | `3741814524` | Blueprint Stat Compare | SuurflieG | UI / QoL | Browse saved/workshop ship designs and compare stats side by side |
 | `3739343155` | Trade Heatmap Alliance ship fix | CobaltStorm | UI / QoL (Bugfix) | Fixes base-game bug so the trading heatmap/overview works on alliance ships |
+| `3723186924` | Fleet Command | Red | Standalone – Fleet Management | Named multi-fleet management with HUD overlay, groups, smart routing, and multi-hop travel |
+| `2943435828` | Extra Long Range Captain Operations | Druark | Standalone – Fleet/Captain | Doubles the range of all captain background operations (mine, trade, salvage, scout, etc.) |
+| `3700767883` | Target Enemy Systems [No System] | Rubber.Band. | Standalone – Combat UI | Adds an advanced enemy targeting system entity and player UI tab |
 
 ---
 
@@ -321,6 +324,39 @@ A total of **36 mod subfolders** under `Avorion/Avorion Mods/` were scanned, of 
 * **Impacted Script Hooks:**
   * `data/scripts/player/map/economyinfo.lua` — patches the **galaxy-map trade heatmap / trading overview** to detect the trading system on alliance ships.
 
+### Fleet Command (Folder: 3723186924)
+
+* **Developer Description:** "Fleet Command gives Avorion players a cleaner way to manage multiple ships. Create named fleets, pick a target, and send common orders without clicking through every ship one at a time."
+* **Metadata:** Author: Red · Version 0.5.22 · `serverSideOnly=false`, `clientSideOnly=false`, `saveGameAltering=true` · Depends on: Avorion 2.0+ · No XSF dependency.
+* **Impacted Script Hooks:** (10 Lua)
+  * `data/scripts/player/fleetcommand.lua` + `player/init.lua` — **fleet management HUD**, named fleets, group commands (Stop/Attack/Patrol/Mine/Salvage/Loot/Escort/Guard/Jump/Pilot), persistent fleet data per player.
+  * `data/scripts/entity/fleetcommandcaptain.lua` — **Fleet Command AI captain** injected into captainless ships to normalize order behavior.
+  * `data/scripts/entity/ai/fleetcommandformation.lua`, `fleetcommandloot.lua` — **formation flight** and **loot targeting** AI behaviors for fleet ships.
+  * `data/scripts/entity/utility/fleetcommandsyncboost.lua` — **sync-boost** entity utility for fleet coordination.
+  * `data/scripts/lib/fleetcommandrouteutility.lua`, `fleetcommandformationutility.lua` — **smart routing** (gate/wormhole-aware multi-hop travel) and formation math libraries.
+  * `data/scripts/entity/init.lua` — entity init hook.
+
+### Extra Long Range Captain Operations (Folder: 2943435828)
+
+* **Developer Description:** "Adds a simple modifier to double the range of various operations you send your captains on. NOTE: This will make certain operations take longer."
+* **Metadata:** Author: Druark · Version 1.0.1 · `serverSideOnly=false`, `clientSideOnly=false`, `saveGameAltering=false` · Depends on: Avorion ≤2.5.* · Incompatible with 4 other range-extension mods (`2614650527`, `2619827652`, `2619827692`, `2879502965`).
+* **Impacted Script Hooks:** (9 Lua — all in `data/scripts/player/background/simulation/`)
+  * `minecommand.lua`, `salvagecommand.lua`, `scoutcommand.lua`, `tradecommand.lua`, `sellcommand.lua`, `refinecommand.lua`, `procurecommand.lua`, `expeditioncommand.lua` — overrides **all background fleet simulation scripts** to double the operating range for each command type.
+  * `utilities.lua` — shared range-modifier utility.
+
+---
+
+### E. Standalone Combat & Targeting
+
+### Target Enemy Systems [No System] (Folder: 3700767883)
+
+* **Developer Description:** "[No Description]"
+* **Metadata:** Author: Rubber.Band. · Version 1.62 · `serverSideOnly=false`, `clientSideOnly=false`, `saveGameAltering=false` · Depends on: any Avorion · Incompatible with `3231059062` and `3697664884`.
+* **Impacted Script Hooks:** (4 Lua)
+  * `data/scripts/entity/targetsystem.lua` — **target engagement system entity component** for enemy ship targeting.
+  * `data/scripts/player/tesTab.lua` + `player/init.lua` — **TES player UI tab** and player init hook.
+  * `data/scripts/entity/init.lua` — entity init hook.
+
 ---
 
 ## Appendix: Xavorion / XSF Suite Load Order
@@ -344,6 +380,11 @@ The LM13 suite is strongly interdependent. Derived from the `dependencies` block
         └─ 2992808773  Xavorion: Class System
              └─ 3165545472  Xavorion: Class Upgrades  (depends on the entire suite above)
 2992808642  Xavorion: Starter Ship          (independent; Avorion-only dependency)
+
+-- Standalone mods (no XSF dependency) --
+3723186924  Fleet Command                   (Avorion 2.0+ only; saveGameAltering=true)
+2943435828  Extra Long Range Captain Ops    (Avorion ≤2.5.*; saveGameAltering=false)
+3700767883  Target Enemy Systems            (any Avorion; saveGameAltering=false)
 ```
 
-> AzimuthLib (`1722652757`) is an independent library consumed by Resource Display (`1769379152`) and is unrelated to the XSF dependency chain.
+> AzimuthLib (`1722652757`) is an independent library consumed by Resource Display (`1769379152`) and is unrelated to the XSF dependency chain. The three standalone mods at the bottom have no declared XSF dependencies and can be loaded independently of the Xavorion suite.

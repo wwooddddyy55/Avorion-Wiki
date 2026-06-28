@@ -1,9 +1,11 @@
 ## GAMEPLAY SYSTEM DIRECTORY
 
-**Codebase:** Avorion v2.5.x  
-**Total gameplay-relevant files catalogued:** ~695 (648 Lua, 45 XML blueprints, 1 SQLite DB)  
+**Codebase:** Avorion v2.5.x + Xavorion/XSF mod suite  
+**Total gameplay-relevant files catalogued:** ~695 vanilla (648 Lua, 45 XML blueprints, 1 SQLite DB) + ~1,687 mod Lua files across 38 Workshop mods  
 **Primary scripting language:** Lua 5.x  
 **Root path convention:** All paths are relative to `Avorion/`
+
+> **Mod note:** The `Mods/` directory contains the Xavorion/XSF overhaul suite and standalone mods. Many vanilla files listed in sections 1–14 are overridden by mod counterparts. See `MOD_GAMEPLAY_DIRECTORY.md` for the full per-mod analysis. Section 15 covers systems introduced exclusively by mods with no vanilla equivalent.
 
 > **Exclusions applied:** `.png`, `.dds`, `.fbx`, `.wav`, `.ogg`, asset meshes, shader files, font assets, localization XMLs, and 155 patch-note `.txt` files have been omitted — they contain no gameplay math or rule definitions.
 
@@ -406,6 +408,42 @@
 
 ---
 
+---
+
+## 15. Mod-Exclusive Systems
+
+> Systems introduced entirely by the Xavorion/XSF mod suite or standalone mods — **no vanilla equivalent** exists in `data/scripts/`. These are the highest-value research targets when documenting mod-added gameplay. Full per-mod analysis is in `MOD_GAMEPLAY_DIRECTORY.md`.
+
+| Mod Path | System | Description | Priority |
+|---|---|---|---|
+| `Mods/2918443067/data/scripts/ShipXAI/XAIComponent.lua` | Ship XAI – Core | XAIComponent state machine entry point; XAI.lua, XAIState, XAIPlugins — extensible AI replacing base AI behavior | **[HIGH]** |
+| `Mods/2918443067/data/scripts/ShipXAI/Plugins/BasicAI.lua` | Ship XAI – BasicAI Plugin | Baseline AI plugin; template for all XAI plugin extensions | **[HIGH]** |
+| `Mods/2918443067/data/scripts/SystemUpgrade/UpgradeFramework.lua` | Upgrade Framework | Property-provider pattern for all system upgrade stats; UpgradeLibrary, UpgradeProperties | **[HIGH]** |
+| `Mods/2918443067/data/scripts/GalaxyGenerator/IGalaxy.lua` | IGalaxy Interface | Galaxy data API consumed by all sector-property providers (tech level, tier, nebula, size) | **[HIGH]** |
+| `Mods/2918443067/data/scripts/SectorInstance/SectorInstance.lua` | Sector Instance | Per-sector shared data blackboard (SectorInstance + SectorBlackboard) | **[HIGH]** |
+| `Mods/2992808472/data/scripts/FleetGenerator/FleetCompositor.lua` | Fleet Compositor | 20-stage fleet composition pipeline: role → loadout → material → plan → equip → spawn → validate | **[HIGH]** |
+| `Mods/2992808472/data/scripts/Strategist/StrategistBalance.lua` | Strategist | Encounter difficulty targeting math (DPS/TTK/STK scaling); StrategistClass | **[HIGH]** |
+| `Mods/2992808396/data/scripts/ArmsGenerator/ArmsLibrary.lua` | Arms Generator | Modular weapon generation framework: barrel/material/rarity/tech function providers | **[HIGH]** |
+| `Mods/2992808396/data/scripts/TooltipMaker/WeaponTooltipMaker.lua` | Tooltip Maker | Weapon/fighter tooltip rendering framework with pluggable property functions | **[MEDIUM]** |
+| `Mods/2992808561/data/scripts/StationDatabase/StationDatabase.lua` | Station Database | Typed station registry (StationClass, ExtendedStationComponent) replacing vanilla definitions | **[HIGH]** |
+| `Mods/2992808561/data/scripts/Simulation/SimulationLibrary.lua` | Simulation Library | ISimulation interface + SimulationDecorator — sector background simulation framework | **[HIGH]** |
+| `Mods/2992808773/data/scripts/ShipBalancer/Lib/BalancerAPI.lua` | Ship Balancer | BalancerAPI, ShipStats, ShipsDatabase — ship class/stat balancing engine; DroneBalancer | **[HIGH]** |
+| `Mods/2992808773/data/scripts/BuildModeUI/BuildModeUI.lua` | Build Mode UI | Extended build mode: ShipClassWidget, ShipStatsWidget — class display in ship editor | **[MEDIUM]** |
+| `Mods/2992808903/data/scripts/Formation/FormationDatabase.lua` | Formation System | Formation definitions (FormationClass, FormationDatabase, FormationSelector) | **[HIGH]** |
+| `Mods/2992808903/data/scripts/Orders/OrderController.lua` | Order Controller | Fleet order command system with HUD (OrderController, OrderHUD) | **[HIGH]** |
+| `Mods/2992808971/data/scripts/CombatHUD/CombatHUD.lua` | Combat HUD | RTS/TPP combat HUD overlay for player-controlled combat | **[MEDIUM]** |
+| `Mods/2992809036/data/scripts/HarvestSimulation/HarvestSim.lua` | Harvest Sim | Background harvest yield simulation math for fleet mining operations | **[HIGH]** |
+| `Mods/2992809109/data/scripts/TurretsDatabase/` *(10 files)* | Turrets Database | Weapon type definitions: Blasters, Lasers, Railguns, Artillery, Disruptors, Launchers, Machineguns, ProtonTorpedos, Defense, ReconstructionLasers | **[HIGH]** |
+| `Mods/2992809109/data/scripts/FleetGenerator/Loadouts/` *(20 files)* | Fleet Loadout Database | Role-based fleet loadout templates: Artillery, Assassin, Bomber, Carrier, Destroyer, Disruptor, Fighter, Hunter, Missile, Support, etc. | **[HIGH]** |
+| `Mods/2923179923/data/scripts/GalaxyScanner/GalaxyScanner.lua` | Galaxy Scanner | Galaxy-level scanning logic and UI (ScannerLibrary, GalaxyScannerUI) | **[MEDIUM]** |
+| `Mods/2923179923/data/scripts/Encyclopedia/` *(40+ files)* | Extended Encyclopedia | Comprehensive in-game encyclopedia: ship classes M1–M8, ship roles, weapons DB, equipment DB, economy station DB, combat/mining/progression guides | **[HIGH]** |
+| `Mods/2943435828/data/scripts/player/background/simulation/` *(9 files)* | Extended Captain Ops | Replaces all fleet simulation commands (mine/salvage/scout/trade/refine/procure/expedition/sell) with doubled-range variants | **[MEDIUM]** |
+| `Mods/3723186924/data/scripts/player/fleetcommand.lua` | Fleet Command | Named multi-fleet management: HUD overlay, groups, smart routing, one-hop multi-sector travel, Escort Lead, Guard Fleet | **[HIGH]** |
+| `Mods/3723186924/data/scripts/entity/fleetcommandcaptain.lua` | Fleet Command Captain | Zero-salary AI captain entity injected by Fleet Command for captainless ships | **[MEDIUM]** |
+| `Mods/3700767883/data/scripts/entity/targetsystem.lua` | Target Enemy Systems | Advanced ship targeting system component with player UI tab (tesTab) | **[MEDIUM]** |
+
+---
+
 ## Summary Statistics
 
 | Category | File Count | Priority Level |
@@ -424,6 +462,8 @@
 | DLC — Rift Expansion | 36 | HIGH/MEDIUM |
 | Core Data Store | 1 | HIGH |
 | Shared Libraries & Utilities | ~20 | LOW |
-| **TOTAL** | **~460 categorized** | — |
+| Mod-Exclusive Systems | 25 entries | HIGH/MEDIUM |
+| **TOTAL (vanilla)** | **~460 categorized** | — |
+| **TOTAL (mod scripts)** | **~1,687 Lua** | — |
 
-> Remaining uncategorized files (~235) are primarily sub-files within the `entity/story/`, `player/story/`, `entity/merchants/`, and `player/background/simulation/` directories. These should be catalogued during deeper per-system analysis passes.
+> Remaining uncategorized vanilla files (~235) are primarily sub-files within the `entity/story/`, `player/story/`, `entity/merchants/`, and `player/background/simulation/` directories. These should be catalogued during deeper per-system analysis passes. Mod files are fully catalogued in `MOD_GAMEPLAY_DIRECTORY.md`.
